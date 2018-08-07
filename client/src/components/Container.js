@@ -1,25 +1,12 @@
 import React from 'react';
 import {Container, Image, Grid, Segment} from 'semantic-ui-react';
 
-const ContainerFluid = props => (
+const ContainerFluid = () => (
 
     <Grid>
     <Grid.Row>
-      <Grid.Column width={}>
-      <h2>Hello Eric</h2>
-      </Grid.Column>
       <Grid.Column>
-<h2>Hello Eric</h2>
-      </Grid.Column>
-
-      <Grid.Column>
-      <h2>Hello Eric</h2>
-      </Grid.Column>
-      <Grid.Column>
-      <h2>Hello Eric</h2>
-      </Grid.Column>
-      <Grid.Column>
-      <h2>Hello Eric</h2>
+      <h1>Let's get hitched</h1>
       </Grid.Column>
     </Grid.Row>
   </Grid>
