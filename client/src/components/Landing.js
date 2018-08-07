@@ -1,16 +1,14 @@
 import React from 'react';
-import {Container, Image, Grid, Segment} from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 
 const ContainerFluid = () => (
-
     <Grid>
     <Grid.Row>
-      <Grid.Column>
+      <Grid.Column className="title" width={6}>
       <h1>Let's get hitched</h1>
       </Grid.Column>
     </Grid.Row>
   </Grid>
-
 );
 
 export default ContainerFluid;
