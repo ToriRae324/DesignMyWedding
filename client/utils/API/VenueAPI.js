@@ -1,10 +1,30 @@
 //foursquare
+// Client ID
+// C5HYUJIN3EP2ISCGSDCBSKNVJVXMC5SI5NGKDPEJ5K34Z5EZ
+// Client Secret
+// 3QCICWJBPHBMJTCFN14ZFPVO30EENPNI40SPV2JQCXGADQCJ
 import axios from "axios"
 
 export default {
-    getArticles: function(topic, startYear, endYear) {
-    const queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=304fa3fe81e44dc5a4950d7dddf66075&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
-    return axios.get(queryURL)
+    getVenues: function(searchObj) {
+      return axios.get({
+        url: 'https://api.foursquare.com/v2/venues/explore',
+        method: 'GET',
+        qs: {
+          client_id: 'C5HYUJIN3EP2ISCGSDCBSKNVJVXMC5SI5NGKDPEJ5K34Z5EZ',
+          client_secret: '3QCICWJBPHBMJTCFN14ZFPVO30EENPNI40SPV2JQCXGADQCJ',
+          ll: '40.7243,-74.0018',
+          query: 'Wedding',
+          v: '20180323',
+          limit: 10
+        }
+      }.then(function(err, res, body) {
+        if (err) {
+          console.error(err);
+        } else {
+          res.json(body);
+        }
+      }));
     }
   };
 
