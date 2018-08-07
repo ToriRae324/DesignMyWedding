@@ -10,7 +10,7 @@ router.route("/")
 // Matches with "/api/Decors/:id"
 router.route("/:id")
 .delete(DecorsController.delete)
-.get(DecorsController.getById)
+.get(DecorsController.findById)
 .put(DecorsController.update)
 
 module.exports = router;

@@ -3,11 +3,11 @@ const UsersController = require("../../controllers/UserController");
 
 // Matches with "/api/Decors"
 router.route("/")
-  .post(DecorsController.create)
+  .post(UsersController.create)
   
 
 // Matches with "/api/Decors/:id"
 router.route("/:id")
-.get(DecorsController.getById)
+.get(UsersController.findById)
 
 module.exports = router;
