@@ -7,11 +7,11 @@ export default {
     delete: function(id) {
       return axios.delete("/api/Dresses/" + id);
     },
-    save: function(articleData) {
-      return axios.post("/api/Dresses", articleData);
+    save: function(dressData) {
+      return axios.post("/api/Dresses", dressData);
     },
-    update: function(articleData) {
-      return axios.put("/api/Dresses/"+article.id)
+    update: function(dressData) {
+      return axios.put("/api/Dresses/"+dress.id)
     },
     getById: function(id) {
       return axios.get("/api/Dresses/"+id)
