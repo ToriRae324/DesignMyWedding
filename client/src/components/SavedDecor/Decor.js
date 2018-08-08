@@ -20,6 +20,7 @@ class Decor extends Component {
         this.getDecor()
     }
     deleteDecor = (id) =>{
+        alert("decor deleted, reload to view updated saved decors")
         DB.delete(id)
     }
 

@@ -18,6 +18,7 @@ class Venue extends Component {
                 }))
     }
     deleteVenue = (id) => {
+        alert("venue deleted, reload page to see updated saved venues")
         DB.delete(id)
     }
 

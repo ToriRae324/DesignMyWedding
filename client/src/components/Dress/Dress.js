@@ -20,6 +20,7 @@ class Dress extends Component {
         this.getDresses()
     }
     saveDress = (title, url, photo, price, currency, shop, shopSite) =>{
+        alert("dress saved")
         const savedDress = {
             title: title,
             url:url,

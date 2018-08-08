@@ -20,6 +20,7 @@ class Decor extends Component {
         this.getDecor()
     }
     saveDecor = (title, url, photo, price, currency, shop, shopSite) => {
+        alert("decor saved")
         const savedDecor = {
             title: title,
             url:url,

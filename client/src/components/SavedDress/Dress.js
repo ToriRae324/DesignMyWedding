@@ -20,6 +20,7 @@ class Dress extends Component {
         this.getDresses()
     }
     deleteDress = (id) =>{
+        alert("dress deleted, reload page to see updated page")
         DB.delete(id)
     }
 
