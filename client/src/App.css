@@ -1,4 +1,13 @@
-div {
-  background-image: url("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjg5M7-hdvcAhUK11MKHeSAC-YQjRx6BAgBEAU&url=http%3A%2F%2Fbdfjade.com%2Fwedding-wallpaper.html&psig=AOvVaw36SBUbogv5yTgfniv8RI-k&ust=1533734865980475");
+body {
+  background-image: url("./images/MagnetStreet-LoveForever_1366x768.jpg");
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  body {
+    background-image: url("./images/MagnetStreet-LoveForever_phone.jpg");
+  
+  }
 
 }
