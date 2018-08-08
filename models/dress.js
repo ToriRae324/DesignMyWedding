@@ -18,14 +18,15 @@ const dressSchema = new Schema({
         type: Number,
         required: true,
     },
-    description: {
+    currency_code: {
         type: String,
-        required: true,
+        required: true
     },
     shop: {
         type: String,
         required: true,
     },
+    
 
 });
 
