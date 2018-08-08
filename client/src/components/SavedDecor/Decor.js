@@ -19,17 +19,8 @@ class Decor extends Component {
     componentDidMount() {
         this.getDecor()
     }
-    saveDecor = (title, url, photo, price, currency, shop, shopSite) => {
-        const savedDecor = {
-            title: title,
-            url:url,
-            photo:photo,
-            price:price,
-            currency_code:currency,
-            shop: shop,
-            shopSite: shopSite
-        }
-        DB.save(savedDecor)
+    deleteDecor = (id) =>{
+        DB.delete(id)
     }
 
     render() {
@@ -40,6 +31,7 @@ class Decor extends Component {
                 {this.state.results.map(res =>
                 <DecorDetail
                 key={res.title}
+                    id={res._id}
                     title={res.title}
                     url= {res.url}
                     photo={res.photo}
@@ -47,7 +39,7 @@ class Decor extends Component {
                     currency={res.currency_code}
                     shop={res.shot}
                     shopSite={res.shopSite}
-                    saveDecor={this.saveDecor}
+                    deleteDecor={this.deleteDecor}
                 />
                 )}
             </div>

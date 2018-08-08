@@ -19,17 +19,8 @@ class Dress extends Component {
     componentDidMount() {
         this.getDresses()
     }
-    saveDress = (title, url, photo, price, currency, shop, shopSite) =>{
-        const savedDress = {
-            title: title,
-            url:url,
-            photo:photo,
-            price:price,
-            currency_code:currency,
-            shop: shop,
-            shopSite: shopSite
-        }
-        DB.save(savedDress)
+    deleteDress = (id) =>{
+        DB.delete(id)
     }
 
     render() {
@@ -40,6 +31,7 @@ class Dress extends Component {
                 {this.state.results.map(res =>
                 <DressDetail
                 key={res.title}
+                id={res._id}
                     title={res.title}
                     url= {res.url}
                     photo={res.photo}
@@ -47,7 +39,7 @@ class Dress extends Component {
                     currency={res.currency_code}
                     shop={res.shot}
                     shopSite={res.shopSite}
-                    saveDress={this.saveDress}
+                    deleteDress={this.deleteDress}
                 />
                 )}
             </div>

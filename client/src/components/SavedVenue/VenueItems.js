@@ -4,7 +4,7 @@ import { Card, Image, Button, Icon } from "semantic-ui-react"
 
 
 const VenueResults = (props) => (
-    <Card onClick={() => props.onClick(props.name, props.phone, props.address, props.rating, props.photo)} id={props.id}>
+    <Card onClick={() => props.onClick(props.id)}>
     <Image src="http://via.placeholder.com/350x150" alt="venue"></Image>
     <Card.Content>
     <Card.Header>{props.name}</Card.Header>
