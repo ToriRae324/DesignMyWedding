@@ -4,7 +4,7 @@ import { Card, } from "semantic-ui-react"
 
 
 const VenueResults = (props) => (
-    <Card.Group>{props.children}</Card.Group>
+    <div className="ui three cards">{props.children}</div>
 )
 
 export default VenueResults
