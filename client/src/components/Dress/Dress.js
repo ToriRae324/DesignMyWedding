@@ -20,19 +20,22 @@ class Dress extends Component {
 
     render() {
         return (
-            <div>
-                Results
+            <div>Results
+                <div className="ui three cards">
+                
                 {this.state.results.map(res =>
                 <DressDetail
                 key={res.title}
                     title={res.title}
                     url= {res.url}
-                    photo={res.Images[1].url_170x135}
+                    photo={res.Images[0].url_170x135}
                     price={res.price}
                     currency={res.currency_code}
                     shop={res.Shop.shop_name}
+                    shopSite={res.Shop.url}
                 />
                 )}
+            </div>
             </div>
         )
     }
