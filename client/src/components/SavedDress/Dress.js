@@ -1,26 +1,26 @@
 import React, { Component } from "react";
-import API from "../../utils/API/DecorAPI";
-import DB from "../../utils/DB/DecorDB"
-import DecorDetail from "./DecorDetail";
+import API from "../../utils/API/DressAPI";
+import DB from "../../utils/DB/DressDB"
+import DressDetail from "./DressDetail";
 
-class Decor extends Component {
+class Dress extends Component {
 
     state = {
         results: [],
         
     };
 
-    getDecor = () => {
-        API.search()
-            .then(res => this.setState({ results: res.data.results }))
+    getDresses = () => {
+        DB.get()
+            .then(res => this.setState({ results: res.data }))
             .catch(err => console.log(err));
     }
 
     componentDidMount() {
-        this.getDecor()
+        this.getDresses()
     }
-    saveDecor = (title, url, photo, price, currency, shop, shopSite) => {
-        const savedDecor = {
+    saveDress = (title, url, photo, price, currency, shop, shopSite) =>{
+        const savedDress = {
             title: title,
             url:url,
             photo:photo,
@@ -29,7 +29,7 @@ class Decor extends Component {
             shop: shop,
             shopSite: shopSite
         }
-        DB.save(savedDecor)
+        DB.save(savedDress)
     }
 
     render() {
@@ -38,16 +38,16 @@ class Decor extends Component {
                 <div className="ui three cards">
                 
                 {this.state.results.map(res =>
-                <DecorDetail
+                <DressDetail
                 key={res.title}
                     title={res.title}
                     url= {res.url}
-                    photo={res.Images[0].url_170x135}
+                    photo={res.photo}
                     price={res.price}
                     currency={res.currency_code}
-                    shop={res.Shop.shop_name}
-                    shopSite={res.Shop.url}
-                    saveDecor={this.saveDecor}
+                    shop={res.shot}
+                    shopSite={res.shopSite}
+                    saveDress={this.saveDress}
                 />
                 )}
             </div>
@@ -57,4 +57,4 @@ class Decor extends Component {
 
 }
 
-export default Decor;
+export default Dress;

@@ -7,6 +7,7 @@ class Dress extends Component {
 
     state = {
         results: [],
+        
     };
 
     getDresses = () => {
