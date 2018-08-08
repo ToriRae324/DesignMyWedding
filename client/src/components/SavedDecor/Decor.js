@@ -12,7 +12,7 @@ class Decor extends Component {
 
     getDecor = () => {
         DB.get()
-            .then(res => this.setState({ results: res.data.results }))
+            .then(res => this.setState({ results: res}))
             .catch(err => console.log(err));
     }
 
