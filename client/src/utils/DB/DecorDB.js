@@ -11,7 +11,7 @@ export default {
       return axios.post("/api/decors", decorData);
     },
     update: function(decorData) {
-      return axios.put("/api/decors/"+decor.id)
+      return axios.put("/api/decors/"+decorData.id)
     },
     getById: function(id) {
       return axios.get("/api/decors/"+id)
