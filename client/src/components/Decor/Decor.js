@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API/DecorAPI";
+import DB from "../../utils/DB/DecorDB"
 import DecorDetail from "./DecorDetail";
 
 class Decor extends Component {
@@ -17,6 +18,18 @@ class Decor extends Component {
     componentDidMount() {
         this.getDecor()
     }
+    saveDecor = (title, url, photo, price, currency, shop, shopSite) => {
+        const savedDecor = {
+            title: title,
+            url:url,
+            photo:photo,
+            price:price,
+            currency_code:currency,
+            shop: shop,
+            shopSite: shopSite
+        }
+        DB.save(savedDecor)
+    }
 
     render() {
         return (
@@ -33,6 +46,7 @@ class Decor extends Component {
                     currency={res.currency_code}
                     shop={res.Shop.shop_name}
                     shopSite={res.Shop.url}
+                    saveDecor={this.saveDecor}
                 />
                 )}
             </div>

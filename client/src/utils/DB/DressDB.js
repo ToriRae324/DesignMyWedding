@@ -11,7 +11,7 @@ export default {
       return axios.post("/api/Dresses", dressData);
     },
     update: function(dressData) {
-      return axios.put("/api/Dresses/"+dress.id)
+      return axios.put("/api/Dresses/"+dressData.id)
     },
     getById: function(id) {
       return axios.get("/api/Dresses/"+id)

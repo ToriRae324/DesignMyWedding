@@ -8,7 +8,7 @@ export default {
       return axios.delete("/api/venues/" + id);
     },
     save: function(venueData) {
-      return axios.post("/api/venues", venueData);
+      return axios.post("/api/Venues", venueData);
     },
     update: function(venueData) {
       return axios.put("/api/venues/"+venueData.id)
