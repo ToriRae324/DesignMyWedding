@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const DressDetail = props => (
   <div className="ui raised link card"> 
   <div className="content">
