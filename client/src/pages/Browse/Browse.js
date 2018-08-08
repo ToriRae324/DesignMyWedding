@@ -6,17 +6,20 @@ import Dress from "../../components/Dress"
 import Decor from "../../components/Decor"
 
 const Browse = () => (
-    <Router>
+    
   
       <div>
         <Sidebar />
-        <Route exact path="/" component={Venue} />
+        <Router>
+          <div>
         <Route exact path="/browse/venues" component={Venue} />
         <Route exact path="/browse/dresses" component={Dress} />
         <Route exact path="/browse/decor" component={Decor} />
+        </div>
+       </Router>
       </div>
   
-    </Router>
+   
   );
   
   export default Browse;
