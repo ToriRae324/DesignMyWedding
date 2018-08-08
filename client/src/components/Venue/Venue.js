@@ -17,9 +17,16 @@ class Venue extends Component {
                     venues: res.data.response.groups[0].items
                 }))
     }
-    saveVenue = (event) => {
-        const {name} = event.target
-        alert(name + " was saved")
+    saveVenue = (name, phone, address, rating, photo) => {
+        const savedVenue = {
+            name: name,
+            locale: address,
+            photo: photo,
+            rating: rating,
+            phone: phone,
+            occupancy: "Call for details",
+        }
+        DB.save(savedVenue)
     }
 
     render(){
@@ -28,6 +35,7 @@ class Venue extends Component {
                     {
                 this.state.venues.map(venue => {return(
                 <VenueItems
+                    id={Math.floor(Math.random() * 1000)}
                     name={venue.venue.name}
                     phone={venue.venue.contact.formattedPhone}
                     address={venue.venue.location.address}

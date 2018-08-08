@@ -8,14 +8,23 @@ const venueSchema = new Schema({
   },
   locale: {
       type: String,
-      require: true,
+      require: false,
   },
   photo: {
       type: String,
-      required: true,
+      required: false,
   },
+  rating: {
+    type: String,
+    required: false,
+},
+phone: {
+    type: String,
+    required: false,
+},
+
   occupancy: {
-      type: Number,
+      type: String,
       required: false,
       default: "Call For Details"
   }
