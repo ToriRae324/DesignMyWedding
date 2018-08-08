@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ContainerFluid from './components/Landing';
-import Venue from "./components/Venue"
-import Dress from "./components/Dress"
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Browse from "./pages/Browse"
+import HeaderNav from './components/HeaderNav';
+import MyStuff from "./pages/MyStuff"
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        {/* Header goes here */}
+const App = () => (
+  <Router>
 
+    <div>
+      <HeaderNav />
+      <Route exact path="/" component={Browse} />
+      <Route path="/browse" component={Browse} />
+      <Route path="/mystuff" component={MyStuff} />
 
       
-      <Browse />
-      </div>
-    );
-  }
-}
+      
+    </div>
+
+  </Router>
+);
 
 export default App;
+
