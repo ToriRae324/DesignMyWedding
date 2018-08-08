@@ -7,6 +7,7 @@ class Decor extends Component {
 
     state = {
         results: [],
+        searchType: this.props.searchType
     };
 
     getDecor = () => {

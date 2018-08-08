@@ -2,9 +2,9 @@ const db = require("../models")
 
 module.exports = {
     find: function (req, res) {
+        console.log("get is called")
         db.Venue
             .find({})
-            .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },

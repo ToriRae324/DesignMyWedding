@@ -1,26 +1,26 @@
 import React, { Component } from "react";
-import API from "../../utils/API/DressAPI";
-import DB from "../../utils/DB/DressDB"
-import DressDetail from "./DressDetail";
+import API from "../../utils/API/DecorAPI";
+import DB from "../../utils/DB/DecorDB"
+import DecorDetail from "./DecorDetail";
 
-class Dress extends Component {
+class Decor extends Component {
 
     state = {
         results: [],
-        searchType: this.props.searchType
+        
     };
 
-    getDresses = () => {
-        API.search()
+    getDecor = () => {
+        DB.get()
             .then(res => this.setState({ results: res.data.results }))
             .catch(err => console.log(err));
     }
 
     componentDidMount() {
-        this.getDresses()
+        this.getDecor()
     }
-    saveDress = (title, url, photo, price, currency, shop, shopSite) =>{
-        const savedDress = {
+    saveDecor = (title, url, photo, price, currency, shop, shopSite) => {
+        const savedDecor = {
             title: title,
             url:url,
             photo:photo,
@@ -29,7 +29,7 @@ class Dress extends Component {
             shop: shop,
             shopSite: shopSite
         }
-        DB.save(savedDress)
+        DB.save(savedDecor)
     }
 
     render() {
@@ -38,7 +38,7 @@ class Dress extends Component {
                 <div className="ui three cards">
                 
                 {this.state.results.map(res =>
-                <DressDetail
+                <DecorDetail
                 key={res.title}
                     title={res.title}
                     url= {res.url}
@@ -47,7 +47,7 @@ class Dress extends Component {
                     currency={res.currency_code}
                     shop={res.Shop.shop_name}
                     shopSite={res.Shop.url}
-                    saveDress={this.saveDress}
+                    saveDecor={this.saveDecor}
                 />
                 )}
             </div>
@@ -57,4 +57,4 @@ class Dress extends Component {
 
 }
 
-export default Dress;
+export default Decor;

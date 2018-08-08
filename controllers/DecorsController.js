@@ -2,10 +2,11 @@ const db = require("../models")
 
 module.exports = {
     find: function (req, res) {
+        console.log("success")
         db.Decor
             .find({})
             .sort({ date: -1 })
-            .then(dbModel => res.json(dbModel))
+            .then(dbModel => console.log(dbModel))
             .catch(err => res.status(422).json(err))
     },
     findById: function (req, res) {

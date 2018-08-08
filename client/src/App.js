@@ -5,6 +5,7 @@ import ContainerFluid from './components/Landing';
 import Venue from "./components/Venue"
 import Dress from "./components/Dress"
 import Browse from "./pages/Browse"
+import MyStuff from "./pages/MyStuff"
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
         {/* Header goes here */}
 
 
-      
+      <MyStuff/>
       <Browse />
       </div>
     );
