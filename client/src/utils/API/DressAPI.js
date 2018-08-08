@@ -1,9 +1,15 @@
 //etsy
-import axios from "axios"
 
+import axios from "axios";
+
+const BASEURL = "https://openapi.etsy.com/v2/listings/active";
+const API_KEY = "?api_key=bvnaauvi6o2lhj5i298bi71o";
+const Query = "&category=weddings/clothing/wedding_gown&limit=50&fields=title,price,currency_code,url&includes=Images(url_170x135),Shop(shop_name)";
+
+
+// Export search results from etsy
 export default {
-    getDresses: function(searchObj) {
-    const queryURL = "https://api.nytimes.com/svc/search/v2/Dressesearch.json?api-key=304fa3fe81e44dc5a4950d7dddf66075&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
-    return axios.get(queryURL)
-    }
-  };
+  search: function() {
+    return axios.get(BASEURL + API_KEY + Query);
+  }
+};
