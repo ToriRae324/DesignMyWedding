@@ -5,6 +5,7 @@ const venueSchema = new Schema({
   name: { 
     type: String,
     required: true,
+    index: {unique:true}
   },
   locale: {
       type: String,

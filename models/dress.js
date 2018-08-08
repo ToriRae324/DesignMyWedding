@@ -5,6 +5,7 @@ const dressSchema = new Schema({
     title: {
         type: String,
         required: true,
+        index: {unique:true}
     },
     url: {
         type: String,
@@ -26,8 +27,10 @@ const dressSchema = new Schema({
         type: String,
         required: true,
     },
-    
-
+    shopSite: {
+        type: String,
+        required: true,
+    }
 });
 
 const Dress = mongoose.model("Dress", dressSchema);
