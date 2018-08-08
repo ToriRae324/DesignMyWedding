@@ -11,10 +11,10 @@ class Venue extends Component {
         venues: []
     }
     componentDidMount() {
-        const venues = API.getVenues("Churches", "Charlotte")
+        const venues = DB.get()
             .then(res =>
                 this.setState({
-                    venues: res.data.response.groups[0].items
+                    venues: res.data
                 }))
     }
     saveVenue = (name, phone, address, rating, photo) => {
@@ -36,11 +36,11 @@ class Venue extends Component {
                 this.state.venues.map(venue => {return(
                 <VenueItems
                     id={Math.floor(Math.random() * 1000)}
-                    name={venue.venue.name}
-                    phone={venue.venue.contact.formattedPhone}
-                    address={venue.venue.location.address}
-                    rating={venue.venue.rating}
-                    photo={venue.venue.photos.groups[0]}
+                    name={venue.name}
+                    phone={venue.phone}
+                    address={venue.locale}
+                    rating={venue.rating}
+                    photo={venue.photo}
                     onClick={this.saveVenue}
                 />)})}
                 </VenueResults>

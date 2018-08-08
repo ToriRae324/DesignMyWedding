@@ -7,7 +7,7 @@ class Dress extends Component {
 
     state = {
         results: [],
-        searchType: this.props.searchType
+        
     };
 
     getDresses = () => {
