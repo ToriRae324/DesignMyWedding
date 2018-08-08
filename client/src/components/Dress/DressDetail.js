@@ -4,8 +4,8 @@ const DressDetail = props => (
   <div className="ui raised link card"> 
   <div className="content">
     <i className="right floated like icon"></i>
-    <div className="header"><a href={props.url}>{props.title}</a></div>
-        <a class="image" alt="dress" href={props.url}>
+    <div className="header"><a href={props.url}target="_blank">{props.title}</a></div>
+        <a class="image" alt="dress" href={props.url} target="_blank">
         <img src={props.photo} />
     </a>
     <div className="description">
@@ -15,7 +15,7 @@ const DressDetail = props => (
   <div className="extra content">
     <span className="left floated">
         Seller: 
-      <a href={props.shopSite}> {props.shop}</a>
+      <a href={props.shopSite} target="_blank"> {props.shop}</a>
     </span>
     <span className="right floated">
             Price: {props.price} {props.currency}
