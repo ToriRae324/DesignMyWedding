@@ -4,17 +4,15 @@ import Browse from "./pages/Browse"
 import HeaderNav from './components/HeaderNav';
 import MyStuff from "./pages/MyStuff"
 
+
 const App = () => (
   <Router>
 
-    <div>
+    <div className="Container">
       <HeaderNav />
       <Route exact path="/" component={Browse} />
       <Route path="/browse" component={Browse} />
-      <Route path="/mystuff" component={MyStuff} />
-
-      
-      
+      <Route path="/mystuff" component={MyStuff} /> 
     </div>
 
   </Router>

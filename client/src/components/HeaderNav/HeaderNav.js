@@ -1,6 +1,7 @@
-import React, { Component } from "react"
-import { Menu } from "semantic-ui-react"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import "./HeaderNav.css"
+import { Menu } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export default class HeaderNav extends Component {
   state = { activeItem: 'home' }
@@ -12,7 +13,7 @@ export default class HeaderNav extends Component {
 
     return (
       <div>
-        <Menu pointing secondary>
+        <Menu pointing secondary style={{ marginBottom: '15px', backgroundColor: "#faeec4" }}>
           <Link to="/browse/venues"> <Menu.Item 
           name='browse'
           active={activeItem === 'browse'} 
