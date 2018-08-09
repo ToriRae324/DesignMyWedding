@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import API from "../../utils/API/DressAPI";
 import DB from "../../utils/DB/DressDB"
 import DressDetail from "./DressDetail";
+import { Dimmer, Loader} from 'semantic-ui-react'
+
 
 class Dress extends Component {
 
     state = {
         results: [],
+        isLoaded: false
         
     };
 
     getDresses = () => {
         API.search()
-            .then(res => this.setState({ results: res.data.results }))
+            .then(res => this.setState({ results: res.data.results, isLoaded: true }))
             .catch(err => console.log(err));
     }
 
@@ -34,10 +37,13 @@ class Dress extends Component {
     }
 
     render() {
+        const isLoaded = this.state.isLoaded
         return (
-            
                 <div className="ui three cards">
-                
+                    <Dimmer className={isLoaded ? '' : 'active'}>
+                        <Loader>Loading Wedding Dresses</Loader>
+                    </Dimmer>
+
                 {this.state.results.map(res =>
                 <DressDetail
                 key={res.title}
