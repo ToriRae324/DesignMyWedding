@@ -15,7 +15,6 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function (req, res) {
-        console.log(req.body)
         db.Dress
             .create(req.body)
             .then(dbModel => res.json(dbModel))
@@ -28,7 +27,6 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     delete: function (req, res) {
-        console.log(req.params.id)
         db.Dress
             .findById(req.params.id)
             .then(dbModel => dbModel.remove())
