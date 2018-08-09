@@ -8,10 +8,12 @@ import SavedDecor from "../../components/SavedDecor";
 const MyStuff = () => (
     
   
-      <div>
+  <div class="ui grid center aligned">
+  <div class="four wide column">
         <SavedSidebar />
+        </div>
         <Router>
-          <div>
+        <div className="eleven wide column">
         <Route exact path="/mystuff/venues" component={SavedVenue} />
         <Route exact path="/mystuff/dresses" component={SavedDress} />
         <Route exact path="/mystuff/decor" component={SavedDecor} />

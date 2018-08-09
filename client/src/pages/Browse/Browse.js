@@ -7,18 +7,19 @@ import Decor from "../../components/Decor"
 
 const Browse = () => (
     
-  
-      <div>
-        <Sidebar />
-        <Router>
-          <div>
-        <Route exact path="/browse/venues" component={Venue} />
-        <Route exact path="/browse/dresses" component={Dress} />
-        <Route exact path="/browse/decor" component={Decor} />
+  <div class="ui grid center aligned">
+    <div class="four wide column">
+      <Sidebar />
+    </div>
+      <Router>
+        <div className="eleven wide column">
+          <Route exact path="/browse/venues" component={Venue} />
+          <Route exact path="/browse/dresses" component={Dress} />
+          <Route exact path="/browse/decor" component={Decor} />
         </div>
-       </Router>
-      </div>
-  
+      </Router>
+      
+  </div>
    
   );
   
