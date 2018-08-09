@@ -5,18 +5,28 @@ import DB from "../../utils/DB/VenueDB"
 import VenueResults from  "./VenueResults"
 import VenueItems from "./VenueItems"
 import { Card } from "semantic-ui-react"
+import { Dimmer, Loader} from 'semantic-ui-react'
+
 
 class Venue extends Component {
     state = {
-        venues: []
+        venues: [],
+        isLoaded: false
     }
-    componentDidMount() {
-        const venues = API.getVenues("Churches", "Charlotte")
+    getVenues() {
+        API.getVenues("Churches", "Charlotte")
             .then(res =>
                 this.setState({
-                    venues: res.data.response.groups[0].items
+                    venues: res.data.response.groups[0].items,
+                    isLoaded: true
                 }))
     }
+    
+
+    componentDidMount() {
+        this.getVenues();
+    }
+
     saveVenue = (name, phone, address, rating, photo, url) => {
         alert("venue saved")
         const savedVenue = {
@@ -32,8 +42,15 @@ class Venue extends Component {
     }
 
     render(){
-        return(
-                <VenueResults>
+        const isLoaded = this.state.isLoaded
+        return (
+                
+                   
+
+                <VenueResults> 
+                    <Dimmer className={isLoaded ? '' : 'active'}>
+                        <Loader>Loading Wedding Venues</Loader>
+                    </Dimmer>
                     {
                 this.state.venues.map(venue => {return(
                 <VenueItems
