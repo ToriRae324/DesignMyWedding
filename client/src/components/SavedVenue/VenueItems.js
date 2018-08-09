@@ -9,7 +9,7 @@ const VenueResults = (props) => (
     <i className="right floated trash icon" onClick={() => props.onClick(props.id)}></i>
     <div className="header">{props.name}</div>
     <a className="image" alt="venue" href={props.locale}>
-        <img src="http://via.placeholder.com/350x150"/>
+        <img src="http://via.placeholder.com/350x150" className="img"/>
     </a>
     <div className="description">
     Phone: {props.phone}

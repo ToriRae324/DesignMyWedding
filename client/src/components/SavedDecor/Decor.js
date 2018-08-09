@@ -44,7 +44,7 @@ class Decor extends Component {
                     photo={res.photo}
                     price={res.price}
                     currency={res.currency_code}
-                    shop={res.shot}
+                    shop={res.shop}
                     shopSite={res.shopSite}
                     deleteDecor={this.deleteDecor}
                 />
