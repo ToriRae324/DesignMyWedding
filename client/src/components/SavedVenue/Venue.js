@@ -10,15 +10,23 @@ class Venue extends Component {
     state = {
         venues: []
     }
+
+    getVenues(){
+        DB.get()
+        .then(res =>
+        this.setState({venues: res.data}))
+        .catch(err => console.log(err));
+    }
+
     componentDidMount() {
-        const venues = DB.get()
-            .then(res =>
-                this.setState({
-                    venues: res.data
-                }))
+        this.getVenues();
+    }
+
+    componentDidUpdate() {
+        this.getVenues();
     }
     deleteVenue = (id) => {
-        alert("venue deleted, reload page to see updated saved venues")
+        alert(`Venue Deleted`)
         DB.delete(id)
     }
 

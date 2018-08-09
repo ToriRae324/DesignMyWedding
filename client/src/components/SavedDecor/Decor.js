@@ -19,8 +19,14 @@ class Decor extends Component {
     componentDidMount() {
         this.getDecor()
     }
+
+    componentDidUpdate() {
+        this.getDecor()
+    }
+
+
     deleteDecor = (id) =>{
-        alert("decor deleted, reload to view updated saved decors")
+        alert(`Decor Deleted.`)
         DB.delete(id)
     }
 
