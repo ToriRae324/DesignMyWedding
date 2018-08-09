@@ -2,7 +2,6 @@ const db = require("../models")
 
 module.exports = {
     find: function (req, res) {
-        console.log("get is called")
         db.Venue
             .find({})
             .then(dbModel => res.json(dbModel))
@@ -15,7 +14,6 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function (req, res) {
-        console.log(req.body)
         db.Venue
             .create(req.body)
             .then(dbModel => res.json(dbModel))
