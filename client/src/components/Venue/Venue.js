@@ -18,6 +18,7 @@ class Venue extends Component {
                 }))
     }
     saveVenue = (name, phone, address, rating, photo) => {
+        alert("venue saved")
         const savedVenue = {
             name: name,
             locale: address,

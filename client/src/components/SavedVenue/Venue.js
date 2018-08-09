@@ -17,16 +17,9 @@ class Venue extends Component {
                     venues: res.data
                 }))
     }
-    saveVenue = (name, phone, address, rating, photo) => {
-        const savedVenue = {
-            name: name,
-            locale: address,
-            photo: photo,
-            rating: rating,
-            phone: phone,
-            occupancy: "Call for details",
-        }
-        DB.save(savedVenue)
+    deleteVenue = (id) => {
+        alert("venue deleted, reload page to see updated saved venues")
+        DB.delete(id)
     }
 
     render(){
@@ -35,13 +28,13 @@ class Venue extends Component {
                     {
                 this.state.venues.map(venue => {return(
                 <VenueItems
-                    id={Math.floor(Math.random() * 1000)}
+                    id={venue._id}
                     name={venue.name}
                     phone={venue.phone}
                     address={venue.locale}
                     rating={venue.rating}
                     photo={venue.photo}
-                    onClick={this.saveVenue}
+                    onClick={this.deleteVenue}
                 />)})}
                 </VenueResults>
         )
