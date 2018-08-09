@@ -19,8 +19,14 @@ class Dress extends Component {
     componentDidMount() {
         this.getDresses()
     }
+
+    componentDidUpdate() {
+        this.getDresses()
+    }
+
+
     deleteDress = (id) =>{
-        alert("dress deleted, reload page to see updated page")
+        alert(`Dress Deleted.`)
         DB.delete(id)
     }
 
