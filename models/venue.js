@@ -23,6 +23,10 @@ phone: {
     type: String,
     required: false,
 },
+site: {
+    type: String,
+    required: false,
+},
 
   occupancy: {
       type: String,

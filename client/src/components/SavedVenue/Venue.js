@@ -42,6 +42,7 @@ class Venue extends Component {
                     address={venue.locale}
                     rating={venue.rating}
                     photo={venue.photo}
+                    site={venue.site}
                     onClick={this.deleteVenue}
                 />)})}
                 </VenueResults>

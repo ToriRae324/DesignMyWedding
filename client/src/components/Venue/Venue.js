@@ -17,7 +17,7 @@ class Venue extends Component {
                     venues: res.data.response.groups[0].items
                 }))
     }
-    saveVenue = (name, phone, address, rating, photo) => {
+    saveVenue = (name, phone, address, rating, photo, url) => {
         alert("venue saved")
         const savedVenue = {
             name: name,
@@ -25,6 +25,7 @@ class Venue extends Component {
             photo: photo,
             rating: rating,
             phone: phone,
+            site: url,
             occupancy: "Call for details",
         }
         DB.save(savedVenue)
@@ -42,6 +43,7 @@ class Venue extends Component {
                     address={venue.venue.location.address}
                     rating={venue.venue.rating}
                     photo={venue.venue.photos.groups[0]}
+                    url={!(venue.tips === undefined) ?  venue.tips[0].canonicalUrl : "not provided"}
                     onClick={this.saveVenue}
                 />)})}
                 </VenueResults>

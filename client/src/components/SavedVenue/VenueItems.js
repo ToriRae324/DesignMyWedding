@@ -17,6 +17,8 @@ const VenueResults = (props) => (
     Address: {props.address}
     <br/>
     Rating: {props.rating}
+    <br/>
+    {!(props.site === undefined) ? <a href={props.site} target="_blank">Website</a> : "Website not provided"}
     </div>
     </div>
     </div>
