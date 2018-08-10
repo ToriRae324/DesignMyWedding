@@ -4,7 +4,6 @@ import API from "../../utils/API/VenueAPI"
 import DB from "../../utils/DB/VenueDB"
 import VenueResults from  "./VenueResults"
 import VenueItems from "./VenueItems"
-import { Card } from "semantic-ui-react"
 import { Dimmer, Loader} from 'semantic-ui-react'
 
 

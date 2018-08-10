@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import API from "../../utils/API/DressAPI";
 import DB from "../../utils/DB/DressDB"
 import DressDetail from "./DressDetail";
 

@@ -1,6 +1,5 @@
 import React from "react"
 import "./Venue.css"
-import { Card, Image, Button, Icon } from "semantic-ui-react"
 
 
 const VenueResults = (props) => (
@@ -8,8 +7,8 @@ const VenueResults = (props) => (
     <div className="content">
     <i className="right floated like icon" onClick={() => props.onClick(props.name, props.phone, props.address, props.rating, props.photo)}></i>
     <div className="header">{props.name}</div>
-    <a className="image" alt="venue" href={props.locale}>
-        <img src="http://via.placeholder.com/350x150" className="img"/>
+    <a className="image" href={props.locale}>
+        <img src="http://via.placeholder.com/350x150" className="img" alt="venue"/>
     </a>
     <div className="description">
     Phone: {props.phone}
