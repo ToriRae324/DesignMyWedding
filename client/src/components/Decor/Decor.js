@@ -64,8 +64,6 @@ class Decor extends Component {
                         Accessories
                         </Button>
 
- 
-                        
                     </Button.Group>
                 </div>
                 <div className="ui three cards stackable">

@@ -16,9 +16,11 @@ const Browse = () => (
         <div className="eleven wide column" id="browseContent" 
         // style={{ height: '800px', overflowY: "scroll" }}
         >
+        <Switch>
           <Route exact path="/browse/venues" component={Venue} />
-          <Route exact path="/browse/dresses" component={Dress} />
-          <Route exact path="/browse/decor" component={Decor} />
+          <Route exact path="/browse/clothing" component={Dress} />
+          <Route exact path="/browse/extras" component={Decor} />
+          </Switch>
         </div>
       </Router>
       

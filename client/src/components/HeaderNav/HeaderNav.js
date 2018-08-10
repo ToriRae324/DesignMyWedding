@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./HeaderNav.css"
-import { Menu } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class HeaderNav extends Component {
@@ -13,20 +13,29 @@ export default class HeaderNav extends Component {
 
     return (
       <div>
-        <Menu pointing secondary style={{ marginBottom: '15px', backgroundColor: "#faeec4" }}>
-          <Link to="/browse/venues"> <Menu.Item 
-          name='browse'
-          active={activeItem === 'browse'} 
-          onClick={this.handleItemClick} 
-          /></Link>
-          <Link to="/mystuff/venues">
-          <Menu.Item
-            name='my stuff'
-            active={activeItem === 'my stuff'}
-            onClick={this.handleItemClick}
-          />
-          </Link>
-          
+        <Menu pointing secondary id="header">
+
+        <h1 id="title"> Amazing Title </h1>
+
+          <Dropdown item text='Browse'>
+            <Dropdown.Menu>
+              <Link to="/browse/venues"><Dropdown.Item>Venues</Dropdown.Item></Link>
+              <Link to="/browse/clothing"><Dropdown.Item>Clothing</Dropdown.Item></Link>
+              <Link to="/browse/extras"><Dropdown.Item>Extras</Dropdown.Item></Link>
+
+            </Dropdown.Menu>
+          </Dropdown>
+
+          <Dropdown item text='My Stuff'>
+            <Dropdown.Menu>
+              <Link to="/mystuff/venues"><Dropdown.Item>Venues</Dropdown.Item></Link>
+              <Link to="/mystuff/clothing"><Dropdown.Item>Clothing</Dropdown.Item></Link>
+              <Link to="/mystuff/extras"><Dropdown.Item>Extras</Dropdown.Item></Link>
+            </Dropdown.Menu>
+          </Dropdown>
+
+
+
           <Menu.Menu position='right'>
             <Menu.Item
               name='logout'
@@ -35,7 +44,7 @@ export default class HeaderNav extends Component {
             />
           </Menu.Menu>
         </Menu>
-        
+
       </div>
     )
   }
