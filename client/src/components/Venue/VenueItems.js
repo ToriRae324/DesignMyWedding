@@ -1,27 +1,43 @@
-import React from "react"
+import React, { Component} from "react"
 import "./Venue.css"
 import { Card, Image, Button, Icon } from "semantic-ui-react"
+import Scraper from "../../utils/Scraper"
 
 
-const VenueResults = (props) => (
+class VenueResults extends Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            isLoaded: false
+        }
+    }
+    
+    render() {
+        
+    return(
+        
     <div className="ui raised link card">
     <div className="content">
-    <i className="right floated like icon" onClick={() => props.onClick(props.name, props.phone, props.address, props.rating, props.photo, props.url)}></i>
-    <div className="header">{props.name}</div>
+    <i className="right floated like icon" onClick={() => this.props.onClick(this.props.name, this.props.phone, this.props.address, this.props.rating, this.props.photo, this.props.url)}></i>
+    <div className="header">{this.props.name}</div>
     <a className="image" alt="venue">
-        <img src="http://via.placeholder.com/350x150" className="img"/>
+        <img  
+        src={!(this.props.url === "not provided") ? Scraper.getPhoto(this.props.url) : "http://via.placeholder.com/350x150"}
+        className="img"/>
     </a>
     <div className="description">
-    Phone: {props.phone}
+    Phone: {this.props.phone}
     <br/>
-    Address: {props.address}
+    Address: {this.props.address}
     <br/>
-    Rating: {props.rating}
+    Rating: {this.props.rating}
     <br/>
-    {!(props.url === "not provided") ? <a href={props.url} target="_blank">Website</a> : "Website not provided"}
+    {!(this.props.url === "not provided") ? <a href={this.props.url} target="_blank">Website</a> : "Website not provided"}
     </div>
     </div>
     </div>
-)
+    
+)}}
 
 export default VenueResults
