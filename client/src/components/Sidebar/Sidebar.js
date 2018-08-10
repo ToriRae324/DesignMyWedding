@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
-import { Link } from "react-router-dom";
+import { Menu, Sticky } from 'semantic-ui-react'
 
 
 export default class Sidebar extends Component {
+
+  state = {}
+
+  handleContextRef = contextRef => this.setState({ contextRef })
+
+  
   handleItemClick = name => this.setState({ activeItem: name })
 
   render() {
     const { activeItem } = this.state || {}
-
+    const { contextRef } = this.state
     return (
+      <Sticky context={contextRef}>
       <Menu vertical>
         <Menu.Item>
           <Menu.Header>Venues</Menu.Header>
@@ -32,8 +38,8 @@ export default class Sidebar extends Component {
           <Menu.Menu>
             <Menu.Item
               href='/browse/dresses'
-              name='Wedding Dresses'
-              active={activeItem === 'Wedding Dresses'}
+              name='Browse Clothing'
+              active={activeItem === 'Browse Clothing'}
               onClick={this.handleItemClick}
             />
             
@@ -41,13 +47,13 @@ export default class Sidebar extends Component {
         </Menu.Item>
 
         <Menu.Item>
-          <Menu.Header>Decor</Menu.Header>
+          <Menu.Header>Extras</Menu.Header>
 
           <Menu.Menu>
             <Menu.Item
               href='/browse/decor'
-              name='All Decor'
-              active={activeItem === 'All Decor'}
+              name='Browse Extras'
+              active={activeItem === 'Browse Extras'}
               onClick={this.handleItemClick}
             />
             
@@ -55,6 +61,7 @@ export default class Sidebar extends Component {
         </Menu.Item>
 
       </Menu>
+      </Sticky>
     )
   }
 }
