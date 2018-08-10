@@ -46,8 +46,8 @@ class Venue extends Component {
                    
 
                 <VenueResults> 
-                    <Dimmer className={isLoaded ? '' : 'active'}>
-                        <Loader>Loading Wedding Venues</Loader>
+                    <Dimmer inverted className={isLoaded ? '' : 'active'}>
+                        <Loader inverted>Loading Wedding Venues</Loader>
                     </Dimmer>
                     {
                 this.state.venues.map(venue => {return(
