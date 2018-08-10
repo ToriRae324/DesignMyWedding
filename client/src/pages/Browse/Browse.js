@@ -4,18 +4,23 @@ import Sidebar from "../../components/Sidebar"
 import Venue from "../../components/Venue"
 import Dress from "../../components/Dress"
 import Decor from "../../components/Decor"
+import "./Browse.css"
 
 const Browse = () => (
     
-  <div class="ui grid center aligned">
-    <div class="four wide column">
+  <div className="ui grid center aligned">
+    <div className="four wide column">
       <Sidebar />
     </div>
       <Router>
-        <div className="eleven wide column">
+        <div className="eleven wide column" id="browseContent" 
+        // style={{ height: '800px', overflowY: "scroll" }}
+        >
+        <Switch>
           <Route exact path="/browse/venues" component={Venue} />
-          <Route exact path="/browse/dresses" component={Dress} />
-          <Route exact path="/browse/decor" component={Decor} />
+          <Route exact path="/browse/clothing" component={Dress} />
+          <Route exact path="/browse/extras" component={Decor} />
+          </Switch>
         </div>
       </Router>
       

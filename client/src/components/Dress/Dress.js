@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import API from "../../utils/API/DressAPI";
 import DB from "../../utils/DB/DressDB"
 import DressDetail from "./DressDetail";
-import { Dimmer, Loader} from 'semantic-ui-react'
+import { Dimmer, Loader, Button} from 'semantic-ui-react'
+import "./Dress.css"
 
 
 class Dress extends Component {
@@ -13,17 +14,21 @@ class Dress extends Component {
         
     };
 
-    getDresses = () => {
-        API.search()
+    getDresses = (query) => () => {
+        this.setState({ results: [], isLoaded: false})
+        API.search(query)
             .then(res => this.setState({ results: res.data.results, isLoaded: true }))
             .catch(err => console.log(err));
     }
 
     componentDidMount() {
-        this.getDresses()
+        this.setState({ results: [], isLoaded: false})
+        API.search("wedding_gown")
+            .then(res => this.setState({ results: res.data.results, isLoaded: true }))
+            .catch(err => console.log(err));
     }
     saveDress = (title, url, photo, price, currency, shop, shopSite) =>{
-        alert("dress saved")
+        alert("Clothing Saved")
         const savedDress = {
             title: title,
             url:url,
@@ -39,9 +44,18 @@ class Dress extends Component {
     render() {
         const isLoaded = this.state.isLoaded
         return (
+           
+            <div>
+                <div>
+                    <Button.Group id = "btnGrp" attached='top'>
+                        <Button color='teal' content='Wedding Dresses' onClick={this.getDresses("wedding_gown")}/>
+                        <Button color='black' content='Other Dresses' onClick={this.getDresses("dress")}/>
+                    </Button.Group>
+                </div>
+            
                 <div className="ui three cards">
-                    <Dimmer className={isLoaded ? '' : 'active'}>
-                        <Loader>Loading Wedding Dresses</Loader>
+                    <Dimmer inverted className={isLoaded ? '' : 'active'}>
+                        <Loader inverted>Loading Wedding Clothing</Loader>
                     </Dimmer>
 
                 {this.state.results.map(res =>
@@ -58,6 +72,8 @@ class Dress extends Component {
                 />
                 )}
             </div>
+            </div>
+            
             
         )
     }

@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 .img{
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
     height: auto;
+=======
+.btn {
+    margin: 2px;
+}
+
+#btnGrp {
+    margin-bottom: 10px;
+>>>>>>> aedde47d4475b64c72b74a6fdbaf07163ebe24a6
 }

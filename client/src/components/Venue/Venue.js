@@ -48,11 +48,11 @@ class Venue extends Component {
     render() {
         const isLoaded = this.state.isLoaded
         return (
-                <VenueResults>
+                
 
-                    <br />
-                    <Dimmer className={isLoaded ? '' : 'active'}>
-                        <Loader>Loading Wedding Venues</Loader>
+                <VenueResults> 
+                    <Dimmer inverted className={isLoaded ? '' : 'active'}>
+                        <Loader inverted>Loading Wedding Venues</Loader>
                     </Dimmer>
 
                     {

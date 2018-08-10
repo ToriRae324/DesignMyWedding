@@ -14,9 +14,11 @@ const MyStuff = () => (
         </div>
         <Router>
         <div className="eleven wide column">
-        <Route exact path="/mystuff/venues" component={SavedVenue} />
-        <Route exact path="/mystuff/dresses" component={SavedDress} />
-        <Route exact path="/mystuff/decor" component={SavedDecor} />
+        <Switch>
+          <Route exact path="/mystuff/venues" component={SavedVenue} />
+          <Route exact path="/mystuff/clothing" component={SavedDress} />
+          <Route exact path="/mystuff/extras" component={SavedDecor} />
+          </Switch>
         </div>
        </Router>
       </div>
