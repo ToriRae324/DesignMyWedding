@@ -10,9 +10,11 @@ const App = () => (
 
     <div className="Container">
       <HeaderNav />
+      <Switch>
       <Route exact path="/" component={Browse} />
       <Route path="/browse" component={Browse} />
       <Route path="/mystuff" component={MyStuff} /> 
+      </Switch>
     </div>
 
   </Router>

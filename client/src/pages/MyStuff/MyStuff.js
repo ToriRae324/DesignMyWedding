@@ -1,27 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SavedSidebar from "../../components/SavedSidebar";
+import { Route, Switch } from "react-router-dom";
 import SavedVenue from "../../components/SavedVenue";
 import SavedDress from "../../components/SavedDress";
 import SavedDecor from "../../components/SavedDecor";
+import ToDoList from "../../components/ToDoList";
 
-const MyStuff = () => (
+const MyStuff = ({ match }) => (
+ 
+ <div className="ui grid center aligned">
+  <div className="four wide column">
+    <ToDoList />
+  </div>
     
-  
-  <div class="ui grid center aligned">
-  <div class="four wide column">
-        <SavedSidebar />
-        </div>
-        <Router>
-        <div className="eleven wide column">
-        <Switch>
-          <Route exact path="/mystuff/venues" component={SavedVenue} />
-          <Route exact path="/mystuff/clothing" component={SavedDress} />
-          <Route exact path="/mystuff/extras" component={SavedDecor} />
-          </Switch>
-        </div>
-       </Router>
+      <div className="eleven wide column" id="browseContent">
+      <Switch>
+        <Route path={match.url + "/venues"} component={SavedVenue}/>
+        <Route path={match.url +"/clothing"} component={SavedDress} />
+        <Route path={match.url +"/extras"} component={SavedDecor} />
+        </Switch>
       </div>
+    
+    
+</div>
   
    
   );

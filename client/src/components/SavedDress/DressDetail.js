@@ -6,8 +6,8 @@ const DressDetail = props => (
   <div className="content">
     <i className="right floated trash icon" onClick={() => props.deleteDress(props.id)}></i>
     <div className="header"><a href={props.url}target="_blank">{props.title}</a></div>
-        <a class="image" alt="dress" href={props.url} target="_blank">
-        <img src={props.photo} />
+        <a className="image" href={props.url} target="_blank">
+        <img src={props.photo} alt="dress"/>
     </a>
     <div className="description">
       <p></p>

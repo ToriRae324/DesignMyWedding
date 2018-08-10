@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import API from "../../utils/API/DecorAPI";
 import DB from "../../utils/DB/DecorDB"
 import DecorDetail from "./DecorDetail";
 
