@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Sidebar from "../../components/Sidebar"
+import ToDoList from "../../components/ToDoList"
 import Venue from "../../components/Venue"
 import Dress from "../../components/Dress"
 import Decor from "../../components/Decor"
@@ -10,7 +10,7 @@ const Browse = () => (
     
   <div className="ui grid center aligned">
     <div className="four wide column">
-      <Sidebar />
+      <ToDoList />
     </div>
       <Router>
         <div className="eleven wide column" id="browseContent" 
