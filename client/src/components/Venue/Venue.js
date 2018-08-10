@@ -4,7 +4,7 @@ import API from "../../utils/API/VenueAPI"
 import DB from "../../utils/DB/VenueDB"
 import VenueResults from "./VenueResults"
 import VenueItems from "./VenueItems"
-import { Card } from "semantic-ui-react"
+import { Card, Button } from "semantic-ui-react"
 import { Dimmer, Loader } from 'semantic-ui-react'
 
 
@@ -13,21 +13,23 @@ class Venue extends Component {
     state = {
         venues: [],
         isLoaded: false,
-        venueType: "churches",
-        location: "Charlotte",
+        location: "Charlotte"
+        
     }
-    getVenues() {
-        API.getVenues(this.state.venueType, this.state.location)
+    getVenues(venueType) {
+        API.getVenues(venueType, this.state.location)
             .then(res =>
                 this.setState({
                     venues: res.data.response.groups[0].items,
                     isLoaded: true
                 }))
     }
+    
+    
 
 
     componentDidMount() {
-        this.getVenues();
+        this.getVenues("Churches");
 
     }
 
@@ -48,9 +50,21 @@ class Venue extends Component {
     render() {
         const isLoaded = this.state.isLoaded
         return (
-                
-
                 <VenueResults> 
+                    <Button.Group id = "btnGrp" attached='top'>
+                        <Button className = "btn" color='yellow' >
+                        Wedding Halls</Button>
+                        <Button className = "btn" color='teal' >
+                        Hotels
+                        </Button>
+                        <Button className = "btn" color='blue' >
+                        Country Clubs
+                        </Button>
+                        <Button className = "btn" color='pink' >
+                        Churches
+                        </Button>
+
+                    </Button.Group>
                     <Dimmer inverted className={isLoaded ? '' : 'active'}>
                         <Loader inverted>Loading Wedding Venues</Loader>
                     </Dimmer>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form , Icon, List} from 'semantic-ui-react'
-
+import DB from "../../utils/DB/todoDB"
 import "./ToDoList.css";
 
 class ToDoList extends Component {
@@ -10,25 +10,32 @@ class ToDoList extends Component {
         allItems: []
     };
 
-    handleInputChange = event => {
-        // Getting the value and name of the input which triggered the change
-        const value = event.target.value;
-        const name = event.target.name;
-        this.setState({
-            [name]: value
-        });
+    componentDidMount =() =>{
+        this.getItems()
+    }
+    getItems = () => {
+        DB.get()
+        .then(res => this.setState({allItems: res.data}))
+        .catch(err => console.log(err))
+    }
+
+
+    handleToDoChange = event => {
+        this.setState({toDo: event.target.value});
     };
 
     handleFormSubmit = event => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-
+        const newTodo = {body: this.state.toDo}
+        this.setState({toDo: ""})
+        DB.save(newTodo)
 
     };
 
-    addTodo(){
-        // function to add new todo
-    }
+    // addTodo(newTodo){
+    //     DB.save(newTodo);
+    // }
 
     completeTodo(){
         // function to mark todo completed
@@ -48,9 +55,9 @@ class ToDoList extends Component {
                 <Form>
                     <Form.Field>
                         <label>To Do: </label>
-                        <input placeholder='To Do' />
+                        <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange}/>
                     </Form.Field>
-                    <Button type='submit'>Add</Button>
+                    <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
                 </Form>
 
 
@@ -58,9 +65,9 @@ class ToDoList extends Component {
 
                    {this.state.allItems.map(todo => 
                    <List.Item>
-                        <span><Icon color="green" name='check' onClick={this.completeTodo("id")}/></span>
+                        <span><Icon color="green" name='check' onClick={() =>this.completeTodo("id")}/></span>
                         {todo}
-                        <span><Icon color="red" name='x' onClick={this.deleteTodo("id")}/></span>
+                        <span><Icon color="red" name='x' onClick={() => this.deleteTodo("id")}/></span>
                     </List.Item>
                     )}
 
