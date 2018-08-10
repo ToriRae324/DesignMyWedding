@@ -54,8 +54,8 @@ class Dress extends Component {
                 </div>
             
                 <div className="ui three cards">
-                    <Dimmer className={isLoaded ? '' : 'active'}>
-                        <Loader>Loading Wedding Clothing</Loader>
+                    <Dimmer inverted className={isLoaded ? '' : 'active'}>
+                        <Loader inverted>Loading Wedding Clothing</Loader>
                     </Dimmer>
 
                 {this.state.results.map(res =>

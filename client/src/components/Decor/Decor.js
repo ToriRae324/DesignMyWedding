@@ -69,8 +69,8 @@ class Decor extends Component {
                     </Button.Group>
                 </div>
                 <div className="ui three cards stackable">
-                    <Dimmer className={isLoaded ? '' : 'active'}>
-                        <Loader>Loading Wedding Extras</Loader>
+                    <Dimmer inverted className={isLoaded ? '' : 'active'}>
+                        <Loader inverted>Loading Wedding Extras</Loader>
                     </Dimmer>
                 
                 {this.state.results.map(res =>
