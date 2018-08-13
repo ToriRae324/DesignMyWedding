@@ -1,15 +1,23 @@
 .completed {
     text-decoration: line-through;
+    color: dimgray
+
 }
 
-#todo {
+#todoCard {
     opacity: 0.85;
     box-shadow: 5px 5px 3px darkgoldenrod;
     background: url(./bg.jpg) no-repeat center fixed; 
     background-size: cover;
 }
 
-.todoItem {
+.ui.checkbox.todoItem, .todoItem {
     margin: 10px 0;
+    font-size: x-large;
+
+}
+
+.ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui){
+    font-family: 'Quattrocento', serif;
     font-size: x-large;
 }

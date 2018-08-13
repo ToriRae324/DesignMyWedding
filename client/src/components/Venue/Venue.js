@@ -56,12 +56,13 @@ class Venue extends Component {
         const isLoaded = this.state.isLoaded
         return (
             <div>
-                <h1>Wedding Venues Around {this.state.location}</h1>
+                <h1 className="title">Wedding Venues Around {this.state.location}</h1>
                 <div>
                 <div class="ui input focus">
                         <input type="text" placeholder="Enter Desired Location..." value={this.state.nextLocation} onChange={this.handleLocationChange}/>
                         <Button color="blue" content="Search" onClick={this.changeLocation}/>
                     </div>
+                    
                     <Button.Group id="btnGrp" attached='top'>
                         <Button color='teal' content='Wedding Hall' onClick={(venue) => this.getVenues("wedding halls",this.state.location)} />
                         <Button color='black' content='Parks' onClick={(venue) => this.getVenues("parks", this.state.location)} />
