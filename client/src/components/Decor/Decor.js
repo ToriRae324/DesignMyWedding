@@ -50,6 +50,7 @@ class Decor extends Component {
         const isLoaded = this.state.isLoaded
         return (
             <div>
+                <h1 className="title">Browse Extras</h1>
                 <div>
                     <Button.Group id = "btnGrp" attached='top'>
                         <Button className = "btn" color='yellow' onClick={this.getDecor("decoration")}>

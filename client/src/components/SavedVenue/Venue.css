@@ -1,6 +1,9 @@
 .img{
     width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
     height: auto;
+}
+
+.ui.raised.card, .ui.raised.cards>.card {
+    opacity: 0.85;
+    box-shadow: 5px 5px 3px #e03997;
 }

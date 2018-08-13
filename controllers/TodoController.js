@@ -4,7 +4,7 @@ module.exports = {
     find: function (req, res) {
         db.Todo
             .find({})
-            .sort({ date: -1 })
+            .sort({ completed: 1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
