@@ -13,9 +13,9 @@ class ToDoList extends Component {
     componentDidMount =() =>{
         this.getItems()
     }
-    componentDidUpdate() {
-        this.getItems();
-    }
+    // componentDidUpdate() {
+    //     this.getItems();
+    // }
     getItems = () => {
         DB.get()
         .then(res => this.setState({allItems: res.data})
@@ -31,15 +31,18 @@ class ToDoList extends Component {
         const newTodo = {body: this.state.toDo}
         this.setState({toDo: ""})
         DB.save(newTodo)
+        this.getItems()
 
     };
     completeTodo(obj){
         DB.update(obj)
+        this.getItems()
         
     }
 
     deleteTodo(id){
         DB.delete(id)
+        this.getItems()
     }
 
     render() {
