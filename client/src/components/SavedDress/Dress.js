@@ -19,14 +19,15 @@ class Dress extends Component {
         this.getDresses()
     }
 
-    componentDidUpdate() {
-        this.getDresses()
-    }
+    // componentDidUpdate() {
+    //     this.getDresses()
+    // }
 
 
     deleteDress = (id) =>{
         alert(`Dress Deleted.`)
-        DB.delete(id)
+        DB.delete(id).then(this.getDresses())
+        this.getDresses()
     }
 
     render() {

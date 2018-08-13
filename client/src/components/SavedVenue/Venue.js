@@ -20,12 +20,14 @@ class Venue extends Component {
         this.getVenues();
     }
 
-    componentDidUpdate() {
-        this.getVenues();
-    }
+    // componentDidUpdate() {
+    //     this.getVenues();
+    // }
     deleteVenue = (id) => {
         alert(`Venue Deleted`)
-        DB.delete(id)
+        DB.delete(id).then(this.getVenues())
+        this.getVenues()
+        
     }
 
     render(){
