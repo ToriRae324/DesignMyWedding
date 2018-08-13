@@ -8,7 +8,9 @@ const DecorDetail = props => (
     <i className="right floated like icon" onClick={() => props.saveDecor(props.title, props.url, props.photo, props.price, props.currency, props.shop, props.shopSite)}></i>
     <div className="header"><a href={props.url}target="_blank">{props.title}</a></div>
         <a className="image"  href={props.url} target="_blank">
-        <img src={props.photo} alt="dress"/>
+        
+        <img src={props.photo} alt="dress" className="image"/>
+       
     </a>
   </div>
   <div className="extra content">
