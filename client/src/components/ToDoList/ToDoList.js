@@ -35,13 +35,13 @@ class ToDoList extends Component {
 
     };
     completeTodo(obj){
-        DB.update(obj)
+        DB.update(obj).then(this.getItems)
         this.getItems()
         
     }
 
     deleteTodo(id){
-        DB.delete(id)
+        DB.delete(id).then(this.getItems)
         this.getItems()
     }
 
