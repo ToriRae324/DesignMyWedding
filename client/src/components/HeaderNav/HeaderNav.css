@@ -1,6 +1,7 @@
 #header {
     margin-bottom: 20px; 
-    background-color: #faeec4; 
+    background: url(./bg.jpg) no-repeat center fixed; 
+    background-size: cover; 
     height: 10%; 
     padding: 2%;
 }

@@ -1,0 +1,15 @@
+.completed {
+    text-decoration: line-through;
+}
+
+#todo {
+    opacity: 0.85;
+    box-shadow: 5px 5px 3px darkgoldenrod;
+    background: url(./bg.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+
+.todoItem {
+    margin: 10px 0;
+    font-size: x-large;
+}
