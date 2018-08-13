@@ -48,12 +48,12 @@ class ToDoList extends Component {
 
     render() {
         return (
-            <Card id="todo">
+            <Card id="todoCard">
                 <Card.Content header='My ToDo List 👰🏻' />
                 <Card.Content description={
                     <Form>
                         <Form.Field>
-                            <label>To Do: </label>
+                            
                             <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
                         </Form.Field>
                         <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
@@ -63,12 +63,19 @@ class ToDoList extends Component {
                     <List animated divided verticalAlign='middle'>
 
                         {this.state.allItems.map(todo =>
-                            <List.Item className={todo.completed === true ?
-                                "todoItem completed" : "todoItem"}>
-                                <Checkbox onClick={() => this.completeTodo(todo)} />
+
+                            (todo.completed === false ? 
+                                <List.Item>
+                                <Checkbox className="todoItem" onClick={() => this.completeTodo(todo)} label={todo.body}/>
+                                <span><Icon color="red" name='x' onClick={() => this.deleteTodo(todo._id)} /></span> 
+                                </List.Item>
+                            :
+                            
+                                <List.Item className="todoItem completed">
                                 {todo.body}
                                 <span><Icon color="red" name='x' onClick={() => this.deleteTodo(todo._id)} /></span>
-                            </List.Item>
+                                </List.Item>
+                            )
                         )}
 
                     </List>
