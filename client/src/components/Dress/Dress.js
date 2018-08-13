@@ -16,14 +16,14 @@ class Dress extends Component {
 
     getDresses = (query) => () => {
         this.setState({ results: [], isLoaded: false})
-        API.search(query)
+        API.get(query)
             .then(res => this.setState({ results: res.data.results, isLoaded: true }))
             .catch(err => console.log(err));
     }
 
     componentDidMount() {
         this.setState({ results: [], isLoaded: false})
-        API.search("wedding_gown")
+        API.get("wedding_gown")
             .then(res => this.setState({ results: res.data.results, isLoaded: true }))
             .catch(err => console.log(err));
     }
