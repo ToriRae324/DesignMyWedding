@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form , Icon, List} from 'semantic-ui-react'
+import { Button, Form , Icon, List, Checkbox} from 'semantic-ui-react'
 
 import "./ToDoList.css";
 
@@ -58,7 +58,7 @@ class ToDoList extends Component {
 
                    {this.state.allItems.map(todo => 
                    <List.Item>
-                        <span><Icon color="green" name='check' onClick={this.completeTodo("id")}/></span>
+                        <span><Checkbox onClick={this.completeTodo("id")}/></span>
                         {todo}
                         <span><Icon color="red" name='x' onClick={this.deleteTodo("id")}/></span>
                     </List.Item>

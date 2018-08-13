@@ -3,7 +3,8 @@ import "./Venue.css"
 
 
 const VenueResults = (props) => (
-    <div className="ui raised link card">
+    <div className="ui link card" style={{"opacity": 0.85,
+    "boxShadow": "5px 5px 3px darkgoldenrod"}}>
     <div className="content">
     <i className="right floated like icon" onClick={() => props.onClick(props.name, props.phone, props.address, props.rating, props.photo)}></i>
     <div className="header">{props.name}</div>
