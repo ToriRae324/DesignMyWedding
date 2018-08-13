@@ -46,6 +46,7 @@ class Dress extends Component {
         return (
            
             <div>
+                <h1 className="title">Browse Clothing</h1>
                 <div>
                     <Button.Group id = "btnGrp" attached='top'>
                         <Button color='teal' content='Wedding Dresses' onClick={this.getDresses("wedding_gown")}/>

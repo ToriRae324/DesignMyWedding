@@ -1,4 +1,5 @@
 import React from "react";
+import "./Decor.css"
 
 
 const DecorDetail = props => (
@@ -7,7 +8,7 @@ const DecorDetail = props => (
     <i className="right floated trash icon" onClick={() => props.deleteDecor(props.id)}></i>
     <div className="header"><a href={props.url}target="_blank">{props.title}</a></div>
         <a className="image" href={props.url} target="_blank">
-        <img src={props.photo} alt="dress"/>
+        <img src={props.photo} alt="dress" className="image"/>
     </a>
     <div className="description">
       <p></p>

@@ -32,7 +32,8 @@ class Decor extends Component {
 
     render() {
         return (
-            
+            <div>
+                <h2 className="title"> My Saved Extras </h2>
                 <div className="ui three cards">
                 
                 {this.state.results.map(res =>
@@ -49,6 +50,7 @@ class Decor extends Component {
                     deleteDecor={this.deleteDecor}
                 />
                 )}
+            </div>
             </div>
             
         )

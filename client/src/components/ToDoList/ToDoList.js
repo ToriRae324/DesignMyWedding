@@ -49,7 +49,8 @@ class ToDoList extends Component {
     render() {
         return (
             <Card id="todoCard">
-                <Card.Content header='My ToDo List 👰🏻' />
+                <Card.Content header='My ToDo List' style={{"fontFamily": "'Dancing Script', cursive" ,
+    "fontSize": "xx-large"}}/>
                 <Card.Content description={
                     <Form>
                         <Form.Field>

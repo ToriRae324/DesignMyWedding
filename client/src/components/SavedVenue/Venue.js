@@ -32,7 +32,10 @@ class Venue extends Component {
 
     render(){
         return(
+        <div>
+        <h2 className="title"> My Saved Venues </h2>
                 <VenueResults>
+                    
                     {
                 this.state.venues.map(venue => {return(
                 <VenueItems
@@ -45,6 +48,7 @@ class Venue extends Component {
                     onClick={this.deleteVenue}
                 />)})}
                 </VenueResults>
+                </div>
         )
     }
 }

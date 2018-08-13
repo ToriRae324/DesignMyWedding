@@ -16,7 +16,7 @@ export default class HeaderNav extends Component {
       <div>
         <Menu pointing secondary id="header">
 
-        <h1 id="title"> Amazing Title </h1>
+        <h1 id="title"> Design My Wedding </h1>
 
           <Dropdown item text='Browse'>
             <Dropdown.Menu>

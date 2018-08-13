@@ -6,6 +6,8 @@
     padding: 2%;
 }
 
-#title {
+#title{
     margin: auto 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: xx-large;
 }

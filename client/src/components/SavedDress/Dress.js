@@ -32,6 +32,8 @@ class Dress extends Component {
 
     render() {
         return (
+        <div>
+        <h2 className="title"> My Saved Clothing </h2>
                 <div className="ui three cards">
                 
                 {this.state.results.map(res =>
@@ -48,6 +50,7 @@ class Dress extends Component {
                     deleteDress={this.deleteDress}
                 />
                 )}
+            </div>
             </div>
         )
     }
