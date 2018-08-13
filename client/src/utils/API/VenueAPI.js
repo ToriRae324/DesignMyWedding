@@ -16,8 +16,7 @@ venue selection possibilities
 */ 
 export default {
     getVenues: function(venue, location) {
-      const venueUrl = "https://api.foursquare.com/v2/venues/explore?query="+venue+"&near="+location+"&limit=10&oauth_token=SO50G20F51NLW0ORZ53S3MVFTNMP15Y5FG0IMWBMGKIOEI1P&v=201800807"
-      return axios.get(venueUrl)
+      return axios.get("/api/foursquare/"+location+"/"+venue)
     // },
     // getWeddingHallVenues: function(location) {
     //   const weddingHallUrl = "https://api.foursquare.com/v2/venues/explore?venues/explore?query=WeddingHall&near="+location+"&limit=10&oauth_token=SO50G20F51NLW0ORZ53S3MVFTNMP15Y5FG0IMWBMGKIOEI1P&v=2018"
