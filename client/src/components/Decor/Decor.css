@@ -1,7 +1,8 @@
-.btn {
-    margin: 2px;
-}
-
 #btnGrp {
     margin-bottom: 10px;
+}
+
+.details {
+    opacity: 0.85;
+    box-shadow: 8px 8px 3px;
 }
