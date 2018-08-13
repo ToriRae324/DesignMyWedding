@@ -9,12 +9,7 @@ const userSchema = new Schema({
         trim: true
     },
     access: {
-        username: {
-            type: String,
-            unique: "Username must be unique",
-            required: true,
-            trim: true
-        },
+        
         password: {
             type: String,
             trim: true,
