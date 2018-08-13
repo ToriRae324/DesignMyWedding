@@ -4,7 +4,7 @@ import API from "../../utils/API/VenueAPI"
 import DB from "../../utils/DB/VenueDB"
 import VenueResults from  "./VenueResults"
 import VenueItems from "./VenueItems"
-import { Dimmer, Loader} from 'semantic-ui-react'
+import { Dimmer, Loader, Button} from 'semantic-ui-react'
 
 
 class Venue extends Component {
@@ -12,8 +12,8 @@ class Venue extends Component {
         venues: [],
         isLoaded: false
     }
-    getVenues() {
-        API.getVenues("Churches", "Charlotte")
+    getVenues(venue) {
+        API.getVenues(venue, "Charlotte")
             .then(res =>
                 this.setState({
                     venues: res.data.response.groups[0].items,
@@ -22,7 +22,7 @@ class Venue extends Component {
     }
 
     componentDidMount() {
-        this.getVenues();
+        this.getVenues("churches");
     }
 
     saveVenue = (name, phone, address, rating, photo) => {
@@ -41,10 +41,17 @@ class Venue extends Component {
     render(){
         const isLoaded = this.state.isLoaded
         return (
-                
-                   
-
-                <VenueResults> 
+                <div>
+                    <div>
+                    <Button.Group id = "btnGrp" attached='top'>
+                        <Button color='teal' content='Wedding Hall' onClick={(venue) => this.getVenues("wedding halls")}/>
+                        <Button color='black' content='Parks' onClick={(venue) => this.getVenues("parks")}/>
+                        <Button color='grey' content='Hotels' onClick={(venue) => this.getVenues("hotels")}/>
+                        <Button color='seagreen' content='Country Clubs' onClick={(venue) => this.getVenues("country club")}/>
+                        <Button color='pink' content='Churches' onClick={(venue) => this.getVenues("churches")}/>
+                    </Button.Group>
+                </div>
+                    <VenueResults> 
                     <Dimmer inverted className={isLoaded ? '' : 'active'}>
                         <Loader inverted>Loading Wedding Venues</Loader>
                     </Dimmer>
@@ -60,6 +67,7 @@ class Venue extends Component {
                     onClick={this.saveVenue}
                 />)})}
                 </VenueResults>
+                </div>
         )
     }
 }
