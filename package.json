@@ -35,13 +35,17 @@
     "concurrent": "^0.3.2",
     "express": "^4.15.4",
     "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.0.17",
     "morgan": "^1.9.0",
     "node": "^10.8.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "react-router-dom": "^4.3.1",
     "request": "^2.88.0",
     "semantic": "^0.0.1",
     "semantic-ui-react": "^0.82.1",
-    "ui": "^0.2.4"
+    "ui": "^0.2.4",
+    "validator": "^10.5.0"
   }
 }
