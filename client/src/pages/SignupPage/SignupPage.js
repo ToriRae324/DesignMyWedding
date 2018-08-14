@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, Redirect } from "react-router-dom";
 import { Dimmer, Button, Header, Form } from 'semantic-ui-react'
 import "./SignupPage.css"
 import DB from '../../utils/DB/loginDB'
@@ -11,7 +11,8 @@ class SignupPage extends React.Component {
             errors: {},
             email: '',
             password: '',
-            name: ''
+            name: '',
+            signedup: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -32,8 +33,7 @@ class SignupPage extends React.Component {
                 password: this.state.password,
                 name: this.state.name
             })
-                .then(res => console.log(res))
-                .then(this.setState({ email: '', password: '', name: '' }))
+                .then(this.setState({ signedup: true}))                
                 .catch(err => console.log(err));
         } else {
             alert('Please check that the whole form is filed out');
@@ -43,6 +43,9 @@ class SignupPage extends React.Component {
 
 
     render() {
+        if (this.state.signedup){
+            return <Redirect to="/login"/>   
+        }
         return (
             <Dimmer active page>
                 <Header as='h1' inverted>
