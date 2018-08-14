@@ -58,7 +58,7 @@ class Venue extends Component {
             <div>
                 <h1 className="title">Wedding Venues Around {this.state.location}</h1>
                 <div>
-                <div class="ui input focus">
+                <div class="ui input focus" id="searchForm">
                         <input type="text" placeholder="Enter Desired Location..." value={this.state.nextLocation} onChange={this.handleLocationChange}/>
                         <Button color="blue" content="Search" onClick={this.changeLocation}/>
                     </div>

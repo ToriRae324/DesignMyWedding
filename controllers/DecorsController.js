@@ -15,9 +15,15 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function (req, res) {
-        db.Decor
-            .create(req.body)
-            .then(dbModel => res.json(dbModel))
+        const token = req.headers.authorization.split(' ')[1]
+        jwt.verify(token, config.jwtSecret, (err, decoded) => {
+            const userId = decoded.sub
+            db.Decor
+                .create(req.body)
+                .then(function (newDecor) {
+                    Db.User.findByIdAndUpdate(userId, {$push: {decors: newDecor._id}}, {new: true})
+                })
+        })
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
