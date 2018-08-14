@@ -36,8 +36,10 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // 2 different routes folders for use of authentication and protecting the routes
-const authRoutes = require('./routes/auth');
+
+// const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
+
 // first app.use is so that the auth routes must be hit and completed first
 // app.use('/auth', authRoutes);
 // second app.use is for all the api routes after the person is authorized to view them.
