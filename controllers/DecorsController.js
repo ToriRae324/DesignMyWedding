@@ -21,7 +21,7 @@ module.exports = {
             const userId = decoded.sub
             console.log(userId+ ":decorController")
             db.Decor
-                .create(req.body)
+                .create(req.body.decorData)
                 .then(function (newDecor) {
                     Db.User.findByIdAndUpdate(userId, {$push: {decors: newDecor._id}}, {new: true})
                 })

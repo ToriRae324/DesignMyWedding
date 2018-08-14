@@ -3,13 +3,12 @@ const db = require('../models');
 const config = require('../config');
 
 module.exports = (req, res, next) => {
+    
     if(!req.body.token) {
         return res.status(401).end();
     }
-
     // get the last part from an authorization header string
-    const token = req.body.token.split(' ')[1];
-    console.log(token + ":middleware")
+    const token = req.body.token.split('.')[1];
 
     // decode the token using a scret key-phrase
     return jwt.verify(token, config.jwtSecret, (err, decoded) => {

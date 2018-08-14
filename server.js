@@ -4,7 +4,6 @@ const passport = require('passport');
 const mongoose = require("mongoose");
 const morgan = require("morgan")
 const routes = require("./routes");
-const authRoutes = require("./routes/auth")
 const axios = require("axios")
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,7 +38,7 @@ if (process.env.NODE_ENV === "production") {
 
 // 2 different routes folders for use of authentication and protecting the routes
 // first app.use is so that the auth routes must be hit and completed first
-app.use('/auth', authRoutes);
+
 // second app.use is for all the api routes after the person is authorized to view them.
 // Add routes, both API and view
 app.use(routes);
