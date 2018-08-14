@@ -52,15 +52,14 @@ userSchema.methods.comparePassword = function(password, callback) {
 
 userSchema.pre('save', function saveHook(next) {
     const user = this;
-    console.log("what is the user before saving? "+user);
+
     if(!user.isModified('password')) {return next();}
-    console.log(`if statement to see if password is modified ${!user.isModified('password')}`)
+
     return bcrypt.genSalt((saltError, salt) => {
-        console.log(`salt error ${saltError}`);
-        console.log(`salt is what? ${salt}`);
+
         
         if(saltError) {return next(saltError); }
-        console.log(`this is user.pass word to be hashed by bcrypt: ${user.password}`)
+
         return bcrypt.hash(user.password, salt, (hashError, hash) => {
             if(hashError) { return next(hashError); }
 
