@@ -6,8 +6,6 @@ const router = new express.Router();
 
 function validateSignupForm(payload){
 
-    console.log("payload form validate email"+payload.email)
-    console.log("payload form validate password"+payload.password)
     const errors = {};
     let isFormValid = true;
     let message = '';
@@ -43,12 +41,15 @@ function validateLoginForm(payload) {
     let isFormValid = true;
     let message = '';
 
+    console.log(`payload.email is what? ${payload.email}`);
+    console.log(`payload.password is what? ${payload.password}`)
+
     if(!payload || typeof payload.email !== 'string' || payload.email.trim().length === 0) {
         isFormValid = false;
         errors.email = 'Please provide your email address.';
     }
 
-    if(!payload || typeof payload.password === 'string' || payload.password.trim().length === 0) {
+    if(!payload || typeof payload.password !== 'string' || payload.password.trim().length === 0) {
         isFormValid = false;
         errors.password = 'Please provide your password.';
     } 
@@ -67,7 +68,7 @@ function validateLoginForm(payload) {
 router.post('/signup', (req, res, next) => {
 
     const validationResult = validateSignupForm(req.body);
-    console.log("Validation result is: "+validationResult.success);
+
     if(!validationResult.success) {
         return res.status(400).json({
             success: false,
@@ -102,7 +103,7 @@ router.post('/signup', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
     const validationResult = validateLoginForm(req.body);
-
+    console.log(`validation result is what? ${validationResult.success}`)
     if(!validationResult.success) {
         return res.status(400).json({
             success: false,
