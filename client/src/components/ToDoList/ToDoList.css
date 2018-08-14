@@ -21,3 +21,15 @@
     font-family: 'Quattrocento', serif;
     font-size: x-large;
 }
+
+.ui.checkbox input.hidden+label{
+    line-height: 1.5;
+}
+
+.ui.list {
+    text-align: left;
+}
+
+.ui.checkbox .box, .ui.checkbox label{
+    padding-left: 1em;
+}
