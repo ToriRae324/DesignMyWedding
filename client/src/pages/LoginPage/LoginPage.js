@@ -3,6 +3,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import { Dimmer,Button, Header, Form } from 'semantic-ui-react'
 import "./LoginPage.css"
 import DB from '../../utils/DB/loginDB'
+import Auth from "../../modules/Auth"
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -30,7 +31,9 @@ class LoginPage extends React.Component {
                 email: this.state.email,
                 password: this.state.password
             })
-            .then(res=> console.log(res))
+            .then(res=> 
+                Auth.authenticateUser(res.data.token)
+            )
             .then(this.setState({email: '', password: ''}))
             .catch(err=> console.log(err.response));
         } else {

@@ -5,6 +5,9 @@ const passport = require('passport');
 const router = new express.Router();
 
 function validateSignupForm(payload){
+
+    console.log("payload form validate email"+payload.email)
+    console.log("payload form validate password"+payload.password)
     const errors = {};
     let isFormValid = true;
     let message = '';
@@ -64,7 +67,7 @@ function validateLoginForm(payload) {
 router.post('/signup', (req, res, next) => {
 
     const validationResult = validateSignupForm(req.body);
-
+    console.log("Validation result is: "+validationResult.success);
     if(!validationResult.success) {
         return res.status(400).json({
             success: false,

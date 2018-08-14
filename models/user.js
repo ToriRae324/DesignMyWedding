@@ -60,7 +60,7 @@ userSchema.methods.comparePassword = function(password, callback) {
 
 userSchema.pre('save', function saveHook(next) {
     const user = this;
-
+    console.log("what is the user before saving? "+user);
     if(!user.isModified('password')) return next();
 
     return bcrypt.genSalt((saltError, salt) => {
