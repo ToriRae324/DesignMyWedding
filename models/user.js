@@ -24,7 +24,8 @@ const userSchema = new Schema({
         email: {
             type: String,
             match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
-            required: "Email is required"
+            required: "Email is required",
+            index: {unique: true}
         },
         isAdmin: {
             type: Boolean,
@@ -51,6 +52,29 @@ const userSchema = new Schema({
         }
     ]
 
+});
+
+userSchema.methods.comparePassword = function(password, callback) {
+    bcrypt.compare(password, this.password, callback);
+};
+
+userSchema.pre('save', function saveHook(next) {
+    const user = this;
+
+    if(!user.isModified('password')) return next();
+
+    return bcrypt.genSalt((saltError, salt) => {
+
+        if(saltError) {return next(saltError); }
+
+        return bcrypt.hash(user.password, salt, (hashError, hash) => {
+            if(hashError) { return next(hashError); }
+
+            user.password = hash;
+
+            return next();
+        });
+    });
 });
 
 const User = mongoose.model("User", userSchema);

@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/proj3");
+mongoose.Promise = global.Promise
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,10 +37,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // 2 different routes folders for use of authentication and protecting the routes
-
 // const authRoutes = require('./routes/auth');
-const apiRoutes = require('./routes/api');
-
+// const apiRoutes = require('./routes/api');
 // first app.use is so that the auth routes must be hit and completed first
 // app.use('/auth', authRoutes);
 // second app.use is for all the api routes after the person is authorized to view them.
