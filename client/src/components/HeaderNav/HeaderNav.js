@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import "./HeaderNav.css"
 import { Menu, Dropdown } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import Auth from "../../modules/Auth"
+
 
 
 export default class HeaderNav extends Component {
-  state = { activeItem: 'home' }
+  state = { 
+    activeItem: 'home',
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  logout= ()=> {
+    Auth.deauthenticateUser()
+  }
+
   render() {
+    
     const { activeItem } = this.state
 
     return (
@@ -41,7 +50,7 @@ export default class HeaderNav extends Component {
             <Menu.Item
               name='logout'
               active={activeItem === 'logout'}
-              onClick={this.handleItemClick}
+              onClick={this.logout}
             />
           </Menu.Menu>
         </Menu>
