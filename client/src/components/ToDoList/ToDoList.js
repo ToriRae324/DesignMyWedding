@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Icon, List, Checkbox, Card } from 'semantic-ui-react'
+import { Button, Form, Icon, List, Checkbox, Card, Label } from 'semantic-ui-react'
 import DB from "../../utils/DB/todoDB"
 import "./ToDoList.css";
 
@@ -67,8 +67,9 @@ class ToDoList extends Component {
 
                             (todo.completed === false ? 
                                 <List.Item>
+                            
                                 <Checkbox className="todoItem" onClick={() => this.completeTodo(todo)} label={todo.body}/>
-                                <span><Icon color="red" name='x' onClick={() => this.deleteTodo(todo._id)} /></span> 
+                                <span><Icon color="red" name='x' onClick={() => this.deleteTodo(todo._id)} /></span>
                                 </List.Item>
                             :
                             
