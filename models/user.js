@@ -58,7 +58,7 @@ userSchema.methods.comparePassword = function(password, callback) {
     bcrypt.compare(password, this.password, callback);
 };
 
-UserSchema.pre('save', function saveHook(next) {
+userSchema.pre('save', function saveHook(next) {
     const user = this;
 
     if(!user.isModified('password')) return next();
