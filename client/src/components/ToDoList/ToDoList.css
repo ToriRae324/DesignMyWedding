@@ -1,6 +1,7 @@
-.completed {
+.todoItem.completed {
     text-decoration: line-through;
-    color: dimgray
+    color: dimgray;
+    font-size: large;
 
 }
 
@@ -11,10 +12,9 @@
     background-size: cover;
 }
 
-.ui.checkbox.todoItem, .todoItem {
+.todoItem {
     margin: 10px 0;
     font-size: x-large;
-
 }
 
 .ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui){
@@ -22,14 +22,11 @@
     font-size: x-large;
 }
 
-.ui.checkbox input.hidden+label{
-    line-height: 1.5;
-}
 
 .ui.list {
     text-align: left;
 }
 
-.ui.checkbox .box, .ui.checkbox label{
-    padding-left: 1em;
+.ui.list .list>.item .header, .ui.list>.item .header{
+    font-weight: 500;
 }

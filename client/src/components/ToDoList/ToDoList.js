@@ -49,12 +49,14 @@ class ToDoList extends Component {
     render() {
         return (
             <Card id="todoCard">
-                <Card.Content header='My ToDo List' style={{"fontFamily": "'Dancing Script', cursive" ,
-    "fontSize": "xx-large"}}/>
+                <Card.Content header='My ToDo List' style={{
+                    "fontFamily": "'Dancing Script', cursive",
+                    "fontSize": "xx-large"
+                }} />
                 <Card.Content description={
                     <Form>
                         <Form.Field>
-                            
+
                             <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
                         </Form.Field>
                         <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
@@ -65,17 +67,22 @@ class ToDoList extends Component {
 
                         {this.state.allItems.map(todo =>
 
-                            (todo.completed === false ? 
-                                <List.Item>
-                            
-                                <Checkbox className="todoItem" onClick={() => this.completeTodo(todo)} label={todo.body}/>
-                                <span><Icon color="red" name='x' onClick={() => this.deleteTodo(todo._id)} /></span>
+                            (todo.completed === false ?
+                                <List.Item className="todoItem">
+                                    <List.Icon color="green" name='check' size='large' verticalAlign='middle' onClick={() => this.completeTodo(todo)} />
+                                    <List.Content>
+                                        <List.Header>{todo.body}</List.Header>
+                                    </List.Content>
+                                    <List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} />
                                 </List.Item>
-                            :
-                            
+                                :
+
                                 <List.Item className="todoItem completed">
-                                {todo.body}
-                                <span><Icon color="red" name='x' onClick={() => this.deleteTodo(todo._id)} /></span>
+                                    <List.Content>
+                                        <List.Header>{todo.body}<List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} /></List.Header>
+
+                                    </List.Content>
+
                                 </List.Item>
                             )
                         )}
