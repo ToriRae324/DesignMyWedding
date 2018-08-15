@@ -17,7 +17,10 @@ export default class HeaderNav extends Component {
 
   logout = () => () => {
     Auth.deauthenticateUser()
+    alert("logged out")
   }
+
+  
 
 
 
