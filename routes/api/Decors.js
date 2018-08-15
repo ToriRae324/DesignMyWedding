@@ -3,7 +3,7 @@ const DecorsController = require("../../controllers/DecorsController");
 
 // Matches with "/api/Decors"
 router.route("/")
-  .get(DecorsController.find)
+  .post(DecorsController.find)
   .post(DecorsController.create)
   
 

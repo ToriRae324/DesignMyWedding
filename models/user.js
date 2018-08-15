@@ -29,7 +29,7 @@ const userSchema = new Schema({
             ref: "Venue"
         }
     ],
-    decor: [
+    decors: [
         {
             type: Schema.Types.ObjectId,
             ref: "Decor"
