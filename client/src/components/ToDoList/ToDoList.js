@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Form, Icon, List, Checkbox, Card, Label } from 'semantic-ui-react'
 import DB from "../../utils/DB/todoDB"
 import "./ToDoList.css";
+import Auth from "../../modules/Auth"
 
 class ToDoList extends Component {
     // Setting the component's initial state
@@ -54,13 +55,20 @@ class ToDoList extends Component {
                     "fontSize": "xx-large"
                 }} />
                 <Card.Content description={
-                    <Form>
-                        <Form.Field>
 
-                            <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
-                        </Form.Field>
-                        <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
-                    </Form>
+                Auth.isUserAuthenticated() ? (
+                <Form>
+                    <Form.Field>
+                        <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
+                    </Form.Field>
+                    <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
+                </Form>
+            ):(
+            <Form>
+                <Form.Input placeholder='Login for access' disabled />
+            </Form>
+        )
+                    
                 } />
                 <Card.Content extra>
                     <List animated divided verticalAlign='middle'>

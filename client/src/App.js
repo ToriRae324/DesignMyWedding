@@ -17,12 +17,11 @@ const App = () => (
     <div className="Container">
       <HeaderNav />
       <div className="ui grid center aligned">
+
         <div className="four wide column">
           <ToDoList />
         </div>
-
         <div className="eleven wide column" id="content">
-
           <Switch>
 
             <Route exact path="/" render={() => (
@@ -39,15 +38,15 @@ const App = () => (
 
 
 
-            <Route path="/mystuff" render={() => (
+            {/* <Route path="/mystuff" render={() => (
               Auth.isUserAuthenticated() ? (
                 <Redirect to="/mystuff/venues" />
               ) : (
                   <LoginPage />
                 )
-            )} />
+            )} /> */}
 
-            {/* <Route path="/mystuff" component={MyStuff} /> */}
+            <Route path="/mystuff" component={MyStuff} />
 
 
 
