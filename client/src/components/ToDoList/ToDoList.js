@@ -14,9 +14,9 @@ class ToDoList extends Component {
     componentDidMount = () => {
         this.getItems()
     }
-    // componentDidUpdate() {
-    //     this.getItems();
-    // }
+    componentDidUpdate() {
+        this.getItems();
+    }
     getItems = () => {
         DB.get()
             .then(res => this.setState({ allItems: res.data.todos })
@@ -28,18 +28,15 @@ class ToDoList extends Component {
     };
 
     handleFormSubmit = event => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
         const newTodo = { body: this.state.toDo }
         this.setState({ toDo: "" })
-        DB.save(newTodo).then(this.getItems)
-        this.getItems()
+        DB.save(newTodo)
+        
 
     };
     completeTodo(obj) {
-        DB.update(obj).then(this.getItems)
-        this.getItems()
-
+        DB.update(obj)
     }
 
     deleteTodo(id) {
