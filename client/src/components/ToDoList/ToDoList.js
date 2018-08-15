@@ -5,7 +5,7 @@ import "./ToDoList.css";
 import Auth from "../../modules/Auth"
 
 class ToDoList extends Component {
-    // Setting the component's initial state
+     //Setting the component's initial state
     state = {
         toDo: "",
         allItems: []
@@ -55,48 +55,53 @@ class ToDoList extends Component {
                     "fontFamily": "'Dancing Script', cursive",
                     "fontSize": "xx-large"
                 }} />
-                <Card.Content description={
+                {/* <Card.Content description={ */}
 
-                Auth.isUserAuthenticated() ? (
+                {Auth.isUserAuthenticated() ? (
+                    
+                <Card.Content description={
                 <Form>
                     <Form.Field>
                         <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
                     </Form.Field>
                     <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
                 </Form>
+                } />
             ):(
+            <Card.Content description={
             <Form>
                 <Form.Input placeholder='Login for access' disabled />
             </Form>
-        )
+            } />
+        )}
                     
-                } />
-                <Card.Content extra>
-                    <List animated divided verticalAlign='middle'>
+                
+                 <Card.Content extra>
+                     <List animated divided verticalAlign='middle'>
 
-                        {this.state.allItems.map(todo =>
+                         {this.state.allItems.map(todo => 
 
-                            (todo.completed === false ?
-                                <List.Item className="todoItem">
-                                    <List.Icon color="green" name='check' size='large' verticalAlign='middle' onClick={() => this.completeTodo(todo)} />
-                                    <List.Content>
-                                        <List.Header>{todo.body}</List.Header>
-                                    </List.Content>
-                                    <List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} />
-                                </List.Item>
-                                :
+                             (todo.completed === false ?
+                                 <List.Item className="todoItem">
+                                     <List.Icon color="green" name='check' size='large' verticalAlign='middle' onClick={() => this.completeTodo(todo)} />
+                                     <List.Content>
+                                         <List.Header>{todo.body}</List.Header>
+                                     </List.Content>
+                                     <List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} />
+                                 </List.Item>
+                                 :
 
-                                <List.Item className="todoItem completed">
-                                    <List.Content>
-                                        <List.Header>{todo.body}<List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} /></List.Header>
+                                 <List.Item className="todoItem completed">
+                                     <List.Content>
+                                         <List.Header>{todo.body}<List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} /></List.Header>
 
-                                    </List.Content>
+                                     </List.Content>
 
-                                </List.Item>
-                            )
-                        )}
+                                 </List.Item>
+                             )
+                       )}
 
-                    </List>
+                  </List>
                 </Card.Content>
             </Card>
         );

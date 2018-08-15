@@ -46,7 +46,7 @@ class LoginPage extends React.Component {
 
     render () {
         if (this.state.loggedin){
-            return <Redirect to="/browse/venues"/>   
+            return <Redirect to="/browse"/>   
         }
       return (
         <Dimmer active page>
