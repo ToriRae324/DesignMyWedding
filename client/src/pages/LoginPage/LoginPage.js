@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Dimmer,Button, Header, Form } from 'semantic-ui-react'
 import "./LoginPage.css"
 import DB from '../../utils/DB/loginDB'
@@ -51,7 +51,9 @@ class LoginPage extends React.Component {
       return (
         <Dimmer active page>
             <Header as='h1'  inverted>
-            Log In!
+            Welcome to Design My Wedding!
+            
+            <Header.Subheader>Please Log In</Header.Subheader>
           </Header>
             <div>
             <br /><br />
@@ -81,6 +83,10 @@ class LoginPage extends React.Component {
 <h3>
 Don't have an account? <Link to='/signup'>Create an Account</Link>
 </h3>
+ 
+                    <h3>
+                        <Link to='/browse/venues'>Continue as Guest</Link>
+                    </h3>
             </div>
 
             </Dimmer>
