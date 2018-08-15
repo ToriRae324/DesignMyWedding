@@ -25,7 +25,14 @@ const App = () => (
 
           <Switch>
 
-            <Route exact path="/" component={LoginPage} />
+            <Route exact path="/" render={() => (
+              Auth.isUserAuthenticated() ? (
+                <Redirect to="/mystuff/venues" />
+              ) : (
+                  <LoginPage />
+                )
+            )} />
+            {/* <Route exact path="/" component={LoginPage} /> */}
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignupPage} />
             <Route path="/browse" component={Browse} />
@@ -33,14 +40,14 @@ const App = () => (
 
 
             <Route path="/mystuff" render={() => (
-               Auth.isUserAuthenticated() ? (
+              Auth.isUserAuthenticated() ? (
                 <Redirect to="/mystuff/venues" />
               ) : (
                   <LoginPage />
                 )
             )} />
 
-            <Route path="/mystuff" component={MyStuff} />
+            {/* <Route path="/mystuff" component={MyStuff} /> */}
 
 
 
