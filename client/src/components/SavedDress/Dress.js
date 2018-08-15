@@ -11,7 +11,7 @@ class Dress extends Component {
 
     getDresses = () => {
         DB.get()
-            .then(res => this.setState({ results: res.data }))
+            .then(res => this.setState({ results: res.data.dresses }))
             .catch(err => console.log(err));
     }
 

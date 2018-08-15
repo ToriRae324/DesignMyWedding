@@ -3,14 +3,14 @@ const VenuesController = require("../../controllers/VenuesController");
 
 // Matches with "/api/Venues"
 router.route("/")
-  .get(VenuesController.find)
+  .post(VenuesController.find)
+
+router.route('/add')
   .post(VenuesController.create)
   
 
 // Matches with "/api/Venues/:id"
 router.route("/:id")
-.delete(VenuesController.delete)
-.get(VenuesController.findById)
-.put(VenuesController.update)
+.post(VenuesController.delete)
 
 module.exports = router;

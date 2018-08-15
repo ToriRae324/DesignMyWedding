@@ -26,7 +26,7 @@ const App = () => (
 
             <Route exact path="/" render={() => (
               Auth.isUserAuthenticated() ? (
-                <Redirect to="/mystuff/venues" />
+                <Redirect to="/mystuff/venues"/>
               ) : (
                   <LoginPage />
                 )
@@ -35,12 +35,13 @@ const App = () => (
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignupPage} />
             <Route path="/browse" component={Browse} />
+            <Route path="/myStuff" component={MyStuff}/>
 
 
 
             {/* <Route path="/mystuff" render={() => (
               Auth.isUserAuthenticated() ? (
-                <Redirect to="/mystuff/venues" />
+                <Redirect to="/mystuff/venues"/>
               ) : (
                   <LoginPage />
                 )

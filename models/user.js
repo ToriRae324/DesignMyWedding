@@ -29,16 +29,28 @@ const userSchema = new Schema({
             ref: "Venue"
         }
     ],
-    decor: [
+    decors: [
         {
             type: Schema.Types.ObjectId,
             ref: "Decor"
+        }
+    ],
+    todos: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Todo"
         }
     ],
     dresses: [
         {
             type: Schema.Types.ObjectId,
             ref: "Dress"
+        }
+    ],
+    todos: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Todo"
         }
     ]
 

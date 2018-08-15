@@ -2,8 +2,9 @@ const db = require("../models")
 
 module.exports = {
     find: function (req, res) {
-        db.Decor
-            .find({})
+        db.User
+            .findOne({_id: req.body.id})
+            .populate("decors")
             .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
@@ -15,17 +16,12 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function (req, res) {
-        const token = req.body.token.split(' ')[1]
-        console.log(token + ":decorController")
-        jwt.verify(token, config.jwtSecret, (err, decoded) => {
-            const userId = decoded.sub
-            console.log(userId+ ":decorController")
-            db.Decor
-                .create(req.body)
-                .then(function (newDecor) {
-                    Db.User.findByIdAndUpdate(userId, {$push: {decors: newDecor._id}}, {new: true})
-                })
-        }).catch(err => res.status(422).json(err));
+        db.Decor
+            .create(req.body.decorData)
+            .then(newDecor => {
+                return db.User.findOneAndUpdate({_id: req.body.id}, {$push: {decors: newDecor._id}}, {new: true})
+            })
+            .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
         db.Decor
