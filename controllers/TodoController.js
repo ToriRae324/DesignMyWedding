@@ -16,9 +16,6 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
-
-
-
     create: function (req, res) {
         db.Todo
             .create(req.body.todoData)
@@ -27,10 +24,6 @@ module.exports = {
             })
             .catch(err => res.status(422).json(err));
     },
-
-
-
-
     update: function (req, res) {
         req.body.completed = true
         db.Todo

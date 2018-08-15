@@ -10,8 +10,10 @@ router.route('/add')
   
 
 // Matches with "/api/todos/:id"
-router.route("/:id")
+router.route("/delete/:id")
 .delete(todosController.delete)
+
+router.route('/:id')
 .get(todosController.findById)
 .put(todosController.update)
 
