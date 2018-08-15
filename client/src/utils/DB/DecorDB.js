@@ -2,8 +2,7 @@ import axios from "axios"
 import Auth from "../../modules/Auth"
 export default {
     get: function() {
-      return axios.post("/api/decors", 
-    {
+      return axios.post("/api/decors",{
       id: Auth.getId()
     });
     },
@@ -11,8 +10,7 @@ export default {
       return axios.delete("/api/decors/" + id);
     },
     save: function(decorData) {
-      console.log(decorData)
-      return axios.post("/api/decors", {
+      return axios.post("/api/decors/add", {
         decorData: decorData,
         id: Auth.getId()
       });

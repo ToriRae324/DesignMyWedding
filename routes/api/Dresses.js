@@ -4,6 +4,8 @@ const DressesController = require("../../controllers/DressesController");
 // Matches with "/api/Dresses"
 router.route("/")
   .get(DressesController.find)
+
+router.route('/add')
   .post(DressesController.create)
   
 

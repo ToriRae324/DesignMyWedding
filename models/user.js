@@ -40,6 +40,12 @@ const userSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: "Dress"
         }
+    ],
+    todos: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Todo"
+        }
     ]
 
 });

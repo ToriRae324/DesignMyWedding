@@ -3,7 +3,7 @@ const db = require("../models")
 module.exports = {
     find: function (req, res) {
         db.User
-            .findById(req.body.id)
+            .findOne({_id: req.body.id})
             .populate("decors")
             .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
@@ -16,14 +16,10 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function (req, res) {
-        const userId = req.body.id;
-        console.log(`userId in the decores controller ${userId}`)
-        console.log(req.body.decorData)
         db.Decor
             .create(req.body.decorData)
-            .then(function (newDecor) {
-                console.log(newDecor._id)
-                db.User.findByIdAndUpdate(userId, {$push: {decors: newDecor._id}}, {new: true})
+            .then(newDecor => {
+                return db.User.findOneAndUpdate({_id: req.body.id}, {$push: {decors: newDecor._id}}, {new: true})
             })
             .catch(err => res.status(422).json(err));
     },
