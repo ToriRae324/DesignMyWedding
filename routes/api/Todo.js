@@ -3,7 +3,9 @@ const todosController = require("../../controllers/TodoController");
 
 // Matches with "/api/todos"
 router.route("/")
-  .get(todosController.find)
+  .post(todosController.find)
+
+router.route('/add')
   .post(todosController.create)
   
 

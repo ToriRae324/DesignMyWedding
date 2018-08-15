@@ -18,7 +18,7 @@ class ToDoList extends Component {
     // }
     getItems = () => {
         DB.get()
-            .then(res => this.setState({ allItems: res.data })
+            .then(res => this.setState({ allItems: res.data.todos })
             )
     }
 

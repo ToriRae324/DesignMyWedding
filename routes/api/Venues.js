@@ -3,7 +3,9 @@ const VenuesController = require("../../controllers/VenuesController");
 
 // Matches with "/api/Venues"
 router.route("/")
-  .get(VenuesController.find)
+  .post(VenuesController.find)
+
+router.route('/add')
   .post(VenuesController.create)
   
 
