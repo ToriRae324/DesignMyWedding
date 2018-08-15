@@ -35,13 +35,16 @@ class LoginPage extends React.Component {
             .then(res=> 
                 Auth.authenticateUser(res.data.token, res.data.user.id)
             )
-            .then(this.setState({loggedin:true}))
-            .catch(err=> console.log(err.response));
+            .then( res =>{
+                if (Auth.isUserAuthenticated) { this.setState({loggedin:true})
+            }}
+        )
+            .catch(err => {console.log(err.response)
+            return alert("Email or Password incorrect")})
         } else {
             alert('Please check that all the fields were filled out');
         }
-        console.log(`email: ${this.state.email}`);
-        console.log(`password: ${this.state.password}`);
+       
     }
 
     render () {
