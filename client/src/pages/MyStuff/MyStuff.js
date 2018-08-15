@@ -9,9 +9,9 @@ const MyStuff = ({ match }) => (
  
  
       <Switch>
-        <Route path={match.url + "/venues"} component={SavedVenue}/>
-        <Route path={match.url +"/clothing"} component={SavedDress} />
-        <Route path={match.url +"/extras"} component={SavedDecor} />
+        <Route path={"/venues"} component={SavedVenue}/>
+        <Route path={"/clothing"} component={SavedDress} />
+        <Route path={"/extras"} component={SavedDecor} />
         </Switch>
      
   
