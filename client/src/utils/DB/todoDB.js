@@ -7,8 +7,11 @@ export default {
         id: Auth.getId()
       });
     },
-    delete: function(id) {
-      return axios.delete("/api/todos/" + id);
+    delete: function(todoId) {
+      return axios.post("/api/todos/delete/" + todoId, 
+    {
+      id: Auth.getId() 
+    });
     },
     save: function(todoData) {
       return axios.post("/api/todos/add", {
@@ -17,7 +20,10 @@ export default {
       });
     },
     update: function(todoData) {
-      return axios.put("/api/todos/"+todoData._id)
+      return axios.post("/api/todos/complete/"+todoData._id,
+      {
+        id: Auth.getId() 
+      });
     },
     // never used
     getById: function(id) {

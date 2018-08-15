@@ -11,10 +11,11 @@ router.route('/add')
 
 // Matches with "/api/todos/:id"
 router.route("/delete/:id")
-.delete(todosController.delete)
+.post(todosController.delete)
 
-router.route('/:id')
-.get(todosController.findById)
-.put(todosController.update)
+
+// .get(todosController.findById)
+router.route("/complete/:id")
+.post(todosController.update)
 
 module.exports = router;
