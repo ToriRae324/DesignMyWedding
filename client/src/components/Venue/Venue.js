@@ -58,7 +58,7 @@ class Venue extends Component {
             <div>
                 <h1 className="title">Wedding Venues Around {this.state.location}</h1>
                 <div>
-                <div class="ui input focus">
+                <div className="ui input focus" id="searchForm">
                         <input type="text" placeholder="Enter Desired Location..." value={this.state.nextLocation} onChange={this.handleLocationChange}/>
                         <Button color="blue" content="Search" onClick={this.changeLocation}/>
                     </div>
@@ -67,7 +67,7 @@ class Venue extends Component {
                         <Button color='teal' content='Wedding Hall' onClick={(venue) => this.getVenues("wedding halls",this.state.location)} />
                         <Button color='black' content='Parks' onClick={(venue) => this.getVenues("parks", this.state.location)} />
                         <Button color='grey' content='Hotels' onClick={(venue) => this.getVenues("hotels", this.state.location)} />
-                        <Button color='seagreen' content='Country Clubs' onClick={(venue) => this.getVenues("country club", this.state.location)} />
+                        <Button color='purple' content='Country Clubs' onClick={(venue) => this.getVenues("country club", this.state.location)} />
                         <Button color='pink' content='Churches' onClick={(venue) => this.getVenues("churches", this.state.location)} />
                     </Button.Group>
                 </div>

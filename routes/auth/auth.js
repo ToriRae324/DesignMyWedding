@@ -5,6 +5,7 @@ const passport = require('passport');
 const router = new express.Router();
 
 function validateSignupForm(payload){
+
     const errors = {};
     let isFormValid = true;
     let message = '';
@@ -40,12 +41,15 @@ function validateLoginForm(payload) {
     let isFormValid = true;
     let message = '';
 
+    console.log(`payload.email is what? ${payload.email}`);
+    console.log(`payload.password is what? ${payload.password}`)
+
     if(!payload || typeof payload.email !== 'string' || payload.email.trim().length === 0) {
         isFormValid = false;
         errors.email = 'Please provide your email address.';
     }
 
-    if(!payload || typeof payload.password === 'string' || payload.password.trim().length === 0) {
+    if(!payload || typeof payload.password !== 'string' || payload.password.trim().length === 0) {
         isFormValid = false;
         errors.password = 'Please provide your password.';
     } 
@@ -99,7 +103,7 @@ router.post('/signup', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
     const validationResult = validateLoginForm(req.body);
-
+    console.log(`validation result is what? ${validationResult.success}`)
     if(!validationResult.success) {
         return res.status(400).json({
             success: false,

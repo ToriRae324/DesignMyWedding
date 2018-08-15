@@ -4,6 +4,7 @@ const passport = require('passport');
 const mongoose = require("mongoose");
 const morgan = require("morgan")
 const routes = require("./routes");
+const authRoutes = require("./routes/auth")
 const axios = require("axios")
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,7 +29,7 @@ passport.use('local-login', LoginStrategy);
 // Middleware checker to see if the user is authorized, if they aren't they are immediately kicked and not authorized to see protected information
 const authCheckMiddleware = require('./middleware/auth-check');
 // Commented out until /api routes are prepared for auth-check
-// app.use('/api', authCheckMiddleware);
+app.use('/api', authCheckMiddleware);
 
 app.use(morgan("dev"))
 // Serve up static assets (usually on heroku)
@@ -37,15 +38,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // 2 different routes folders for use of authentication and protecting the routes
-// const authRoutes = require('./routes/auth');
-// const apiRoutes = require('./routes/api');
 // first app.use is so that the auth routes must be hit and completed first
-// app.use('/auth', authRoutes);
+app.use('/auth', authRoutes);
 // second app.use is for all the api routes after the person is authorized to view them.
-// app.use('/api', apiRoutes);
-
 // Add routes, both API and view
 app.use(routes);
+
 
 // Start the API server
 app.listen(PORT, function() {

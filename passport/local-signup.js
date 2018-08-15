@@ -8,6 +8,7 @@ module.exports = new SignupLocalStrategy({
     session: false,
     passReqToCallback: true
 }, (req, email, password, done) => {
+
     const userData = {
         email: email.trim(),
         password: password.trim(),

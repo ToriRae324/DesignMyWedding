@@ -1,7 +1,7 @@
 import axios from "axios"
 export default {
   get: function(query){
-    return axios.get("/api/etsy/clothing/"+query)
+    return axios.get("/auth/etsy/clothing/"+query)
   }
   // get: function(query) {
   //   const BASEURL = "https://openapi.etsy.com/v2/listings/active";
