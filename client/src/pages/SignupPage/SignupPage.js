@@ -26,18 +26,28 @@ class SignupPage extends React.Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.email && this.state.password) {
+        if (this.state.name && this.state.email && this.state.password.length >= 8) {
             // axios ajax call here
             DB.signup({
                 email: this.state.email,
                 password: this.state.password,
                 name: this.state.name
             })
-                .then(this.setState({ signedup: true}))                
-                .catch(err => console.log(err));
-        } else {
+            .then(res => 
+                {
+                    if(res.status === 200) {
+                        this.setState({ signedup: true})
+                    } 
+                }
+            )               
+                .catch(err => {console.log("Error: "+ err)
+                return alert("That email address is already in use.")}
+            );
+        } else if (this.state.password.length < 8) {
+            alert("Password must be at least 8 characters.")
+        } else if (!this.state.name || !this.state.email || !this.state.password) {
             alert('Please check that the whole form is filed out');
-        }
+        } 
     }
 
 
