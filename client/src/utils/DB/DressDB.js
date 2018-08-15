@@ -3,10 +3,15 @@ import Auth from "../../modules/Auth";
 
 export default {
     get: function() {
-      return axios.post("/api/Dresses");
+      return axios.post("/api/Dresses",
+    {
+      id: Auth.getId()
+    });
     },
-    delete: function(id) {
-      return axios.delete("/api/Dresses/" + id);
+    delete: function(dressId) {
+      return axios.post("/api/Dresses/" + dressId,{
+        id: Auth.getId()
+      });
     },
     save: function(dressData) {
       return axios.post("/api/Dresses/add", {

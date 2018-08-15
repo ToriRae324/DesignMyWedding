@@ -11,8 +11,7 @@ router.route('/add')
 
 // Matches with "/api/Decors/:id"
 router.route("/:id")
-.delete(DecorsController.delete)
-.get(DecorsController.findById)
-.put(DecorsController.update)
+.post(DecorsController.delete)
+
 
 module.exports = router;

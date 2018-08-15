@@ -11,8 +11,7 @@ router.route('/add')
 
 // Matches with "/api/Dresses/:id"
 router.route("/:id")
-.delete(DressesController.delete)
-.get(DressesController.findById)
-.put(DressesController.update)
+.post(DressesController.delete)
+
 
 module.exports = router;

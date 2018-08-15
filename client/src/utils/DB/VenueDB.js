@@ -3,10 +3,16 @@ import Auth from '../../modules/Auth';
 
 export default {
     get: function() {
-      return axios.post("/api/venues");
+      return axios.post("/api/venues",
+    {
+      id: Auth.getId()
+    });
     },
     delete: function(id) {
-      return axios.delete("/api/venues/" + id);
+      return axios.post("/api/venues/" + id,
+    {
+      id: Auth.getId()
+    });
     },
     save: function(venueData) {
       return axios.post("/api/Venues/add", {

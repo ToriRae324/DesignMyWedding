@@ -31,7 +31,7 @@ class ToDoList extends Component {
         event.preventDefault();
         const newTodo = { body: this.state.toDo }
         this.setState({ toDo: "" })
-        DB.save(newTodo)
+        DB.save(newTodo).then(this.getItems)
         this.getItems()
 
     };

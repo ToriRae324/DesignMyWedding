@@ -6,8 +6,11 @@ export default {
       id: Auth.getId()
     });
     },
-    delete: function(id) {
-      return axios.delete("/api/decors/" + id);
+    delete: function(decorId) {
+      return axios.post("/api/decors/" + decorId,
+    {
+      id: Auth.getId()
+    });
     },
     save: function(decorData) {
       return axios.post("/api/decors/add", {
