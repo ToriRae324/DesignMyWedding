@@ -3,14 +3,15 @@ const DecorsController = require("../../controllers/DecorsController");
 
 // Matches with "/api/Decors"
 router.route("/")
-  .get(DecorsController.find)
+  .post(DecorsController.find)
+
+router.route('/add')
   .post(DecorsController.create)
   
 
 // Matches with "/api/Decors/:id"
 router.route("/:id")
-.delete(DecorsController.delete)
-.get(DecorsController.findById)
-.put(DecorsController.update)
+.post(DecorsController.delete)
+
 
 module.exports = router;

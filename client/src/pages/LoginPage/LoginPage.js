@@ -33,7 +33,7 @@ class LoginPage extends React.Component {
                 password: this.state.password
             })
             .then(res=> 
-                Auth.authenticateUser(res.data.token)
+                Auth.authenticateUser(res.data.token, res.data.user.id)
             )
             .then(this.setState({loggedin:true}))
             .catch(err=> console.log(err.response));

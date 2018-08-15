@@ -12,7 +12,7 @@ class Venue extends Component {
     getVenues(){
         DB.get()
         .then(res =>
-        this.setState({venues: res.data}))
+        this.setState({venues: res.data.venues}))
         .catch(err => console.log(err));
     }
 

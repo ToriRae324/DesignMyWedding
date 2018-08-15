@@ -41,8 +41,10 @@ module.exports = new LoginLocalStrategy({
             // create a token string
             const token = jwt.sign(payload, config.jwtSecret);
             const data = {
-                name: user.name
+                name: user.name,
+                id: user._id
             };
+            console.log(data)
             return done(null, token, data);
         });
     });
