@@ -49,21 +49,23 @@ class SignupPage extends React.Component {
         return (
             <Dimmer active page>
                 <Header as='h1' inverted>
-                    Create An Account!
+                    Welcome to Design My Wedding
+                    <Header.Subheader>Sign Up</Header.Subheader>
           </Header>
                 <div>
                     <br /><br />
                     <Form>
-                        <Form.Field>
+                        <Form.Field required>
                             <label id="name">Name</label>
                             <input
                                 type="text"
                                 name="name"
                                 value={this.state.name}
                                 onChange={this.handleInputChange}
+                                
                             />
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required>
                             <label id="email">Email</label>
                             <input
                                 type="email"
@@ -72,7 +74,7 @@ class SignupPage extends React.Component {
                                 onChange={this.handleInputChange}
                             />
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required>
                             <label id="password">Password</label>
                             <input
                                 type="password"
@@ -86,6 +88,10 @@ class SignupPage extends React.Component {
 
                     <h3>
                         Have an account already? <Link to='/login'>Login</Link></h3>
+
+                        <h3>
+<Link to='/browse/venues'>Continue as Guest</Link>
+</h3>
 
                 </div>
 
