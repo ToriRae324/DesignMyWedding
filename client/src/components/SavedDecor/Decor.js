@@ -34,7 +34,7 @@ class Decor extends Component {
         return (
             <div>
                 <h2 className="title"> My Saved Extras </h2>
-                <div className="ui three cards">
+                <div className="ui three cards stackable">
                 
                 {this.state.results.map(res =>
                 <DecorDetail
