@@ -1,4 +1,5 @@
 import axios from "axios"
+import Auth from "../../modules/Auth"
 
 export default {
     get: function() {
@@ -8,7 +9,11 @@ export default {
       return axios.delete("/api/venues/" + id);
     },
     save: function(venueData) {
-      return axios.post("/api/Venues", venueData);
+      return axios.post("/api/Venues", {
+        venueData: venueData,
+        id: Auth.getId()
+      }
+      );
     },
     update: function(venueData) {
       return axios.put("/api/venues/"+venueData.id)

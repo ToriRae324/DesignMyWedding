@@ -2,8 +2,9 @@ const db = require("../models")
 
 module.exports = {
     find: function (req, res) {
-        db.Venue
-            .find({})
+        db.User
+            .find(req.body.id)
+            .populate("venues")
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
@@ -14,9 +15,15 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function (req, res) {
+        const userId = req.body.id;
+        console.log(`userId in the decores controller ${userId}`)
+        console.log(req.body.decorData)
         db.Venue
             .create(req.body)
-            .then(dbModel => res.json(dbModel))
+            .then(function (newVenue) {
+                console.log(newVenue._id)
+                db.User.findByIdAndUpdate(userId, {$push: {venues: newVenue._id}}, {new: true})
+            })
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {

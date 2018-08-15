@@ -23,7 +23,7 @@ module.exports = {
             .create(req.body.decorData)
             .then(function (newDecor) {
                 console.log(newDecor._id)
-                db.User.findByIdAndUpdate(userId, {$push: {decors: newDecor._id}}, {new: true})
+                db.User.findByIdAndUpdate(userId, {$push: {decor: newDecor._id}}, {new: true})
             })
             .catch(err => res.status(422).json(err));
     },

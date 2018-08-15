@@ -35,6 +35,12 @@ const userSchema = new Schema({
             ref: "Decor"
         }
     ],
+    todos: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Todo"
+        }
+    ],
     dresses: [
         {
             type: Schema.Types.ObjectId,
