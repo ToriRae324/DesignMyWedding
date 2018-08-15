@@ -15,9 +15,9 @@ class ToDoList extends Component {
         this.getItems()
     }
 
-    // componentDidUpdate() {
-    //     this.getItems();
-    // }
+    componentDidUpdate() {
+        this.getItems();
+    }
 
     getItems = () => {
         DB.get()
@@ -30,17 +30,16 @@ class ToDoList extends Component {
     };
 
     handleFormSubmit = event => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
         const newTodo = { body: this.state.toDo }
         this.setState({ toDo: "" })
-        DB.save(newTodo).then(this.getItems())
-        this.getItems()
+
+        DB.save(newTodo)
+        
 
     };
     completeTodo(obj) {
-        DB.update(obj).then(this.getItems())
-        this.getItems()
+        DB.update(obj)
 
     }
 
