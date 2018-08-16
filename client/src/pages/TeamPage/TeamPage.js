@@ -3,6 +3,7 @@ import { Accordion, Icon, Image } from 'semantic-ui-react'
 
 const tori = './tori.jpeg';
 const blaise = "./blaise.png";
+const eric = "./Eric.png";
 
 
 class TeamPage extends Component {
@@ -56,9 +57,10 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
         
-        <Image src='http://placekitten.com/200/300' size='small' circular  verticalAlign='middle'/>
+        <Image src={eric} size='small' circular  verticalAlign='middle'/>
          <p> 
-            Eric is the one who made the back end routes and linked all this together.
+         Eric created and ensured that the back-end of the project worked properly. He created the controllers, routes and front end calls to the backend to provide our application the functionality that our app required.
+         </p><p> Eric used the Foursquare api to gather information on the potential wedding venues that our users may browse. Eric also implemented a geolocater to allow the user to view venues that are near them.
           </p>
           
         </Accordion.Content>

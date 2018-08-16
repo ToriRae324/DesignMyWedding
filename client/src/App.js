@@ -41,17 +41,15 @@ const App = () => (
             <Route path="/myStuff" component={MyStuff}/>
             <Route exact path="/teamPage" component={TeamPage}/>
 
-
-
-
-
-            {/* <Route path="/mystuff" render={() => (
+            <Route path="/mystuff" render={() => (
               Auth.isUserAuthenticated() ? (
                 <Redirect to="/mystuff/venues"/>
               ) : (
                   <LoginPage />
                 )
-            )} /> */}
+            )} />
+
+
 
 
           </Switch>
