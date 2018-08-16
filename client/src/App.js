@@ -37,6 +37,7 @@ const App = () => (
             <Route exact path="/signup" component={SignupPage} />
             <Route path="/browse" component={Browse} />
             <Route path="/myStuff" component={MyStuff}/>
+            <Route exact path="/teamPage" component={TeamPage}/>
 
 
 
@@ -48,7 +49,7 @@ const App = () => (
                 )
             )} /> */}
 
-            <Route path="/mystuff" component={MyStuff} />
+
 
 
 
