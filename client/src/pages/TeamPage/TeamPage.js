@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Accordion, Icon, Image } from 'semantic-ui-react'
 
-const tori = './tori.jpeg'
+const tori = './tori.jpeg';
+const blaise = "./blaise.png";
 
 
 class TeamPage extends Component {
@@ -29,7 +30,7 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
         
-        <Image src='../../images/blaise-hs-dt.png' size='small' circular verticalAlign='middle'/>
+        <Image src={blaise} size='small' circular verticalAlign='middle'/>
           <p>
             Blaise worked on User Authentication, securing our site, your password, and also working to make sure all of your personalized data remains yours!
           </p>
