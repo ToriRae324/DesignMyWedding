@@ -5,7 +5,7 @@ import "./ToDoList.css";
 import Auth from "../../modules/Auth"
 
 class ToDoList extends Component {
-    // Setting the component's initial state
+    //Setting the component's initial state
     state = {
         toDo: "",
         allItems: []
@@ -14,9 +14,11 @@ class ToDoList extends Component {
     componentDidMount = () => {
         this.getItems()
     }
+
     componentDidUpdate() {
         this.getItems();
     }
+
     getItems = () => {
         DB.get()
             .then(res => this.setState({ allItems: res.data.todos })
@@ -31,72 +33,95 @@ class ToDoList extends Component {
         event.preventDefault();
         const newTodo = { body: this.state.toDo }
         this.setState({ toDo: "" })
+
         DB.save(newTodo)
-        
+
 
     };
     completeTodo(obj) {
         DB.update(obj)
+
     }
 
     deleteTodo(id) {
-        DB.delete(id).then(this.getItems)
+        DB.delete(id).then(this.getItems())
         this.getItems()
     }
 
     render() {
         return (
-            <Card id="todoCard">
-                <Card.Content header='My ToDo List' style={{
-                    "fontFamily": "'Dancing Script', cursive",
-                    "fontSize": "xx-large"
-                }} />
-                <Card.Content description={
 
-                Auth.isUserAuthenticated() ? (
-                <Form>
-                    <Form.Field>
-                        <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
-                    </Form.Field>
-                    <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
-                </Form>
-            ):(
-            <Form>
-                <Form.Input placeholder='Login for access' disabled />
-            </Form>
-        )
-                    
-                } />
-                <Card.Content extra>
-                    <List animated divided verticalAlign='middle'>
 
-                        {this.state.allItems.map(todo =>
+            // <Card id="todoCard">
+            //     <Card.Content header='My ToDo List' style={{
+            //         "fontFamily": "'Dancing Script', cursive",
+            //         "fontSize": "xx-large"
+            //     }} />
 
-                            (todo.completed === false ?
-                                <List.Item className="todoItem">
-                                    <List.Icon color="green" name='check' size='large' verticalAlign='middle' onClick={() => this.completeTodo(todo)} />
-                                    <List.Content>
-                                        <List.Header>{todo.body}</List.Header>
-                                    </List.Content>
-                                    <List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} />
-                                </List.Item>
-                                :
+            Auth.isUserAuthenticated() ? (
 
-                                <List.Item className="todoItem completed">
-                                    <List.Content>
-                                        <List.Header>{todo.body}<List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} /></List.Header>
+                <Card id="todoCard">
+                    <Card.Content header='My ToDo List' style={{
+                        "fontFamily": "'Dancing Script', cursive",
+                        "fontSize": "xx-large"
+                    }} />
+                    <Card.Content description={
+                        <Form>
+                            <Form.Field>
+                                <input placeholder='To Do' value={this.state.toDo} onChange={this.handleToDoChange} />
+                            </Form.Field>
+                            <Button type='submit' onClick={this.handleFormSubmit}>Add</Button>
+                        </Form>
+                    } />
+                    <Card.Content extra>
+                        <List animated divided verticalAlign='middle'>
 
-                                    </List.Content>
+                            {this.state.allItems.map(todo =>
 
-                                </List.Item>
-                            )
-                        )}
+                                (todo.completed === false ?
+                                    <List.Item className="todoItem">
+                                        <List.Icon color="green" name='check' size='large' verticalAlign='middle' onClick={() => this.completeTodo(todo)} />
+                                        <List.Content>
+                                            <List.Header>{todo.body}</List.Header>
+                                        </List.Content>
+                                        <List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} />
+                                    </List.Item>
+                                    :
 
-                    </List>
-                </Card.Content>
-            </Card>
+                                    <List.Item className="todoItem completed">
+                                        <List.Content>
+                                            <List.Header>{todo.body}<List.Icon color="red" name='x' size="small" verticalAlign='middle' onClick={() => this.deleteTodo(todo._id)} /></List.Header>
+
+                                        </List.Content>
+
+                                    </List.Item>
+                                )
+                            )}
+
+                        </List>
+                    </Card.Content>
+                </Card>
+
+
+            ) : (
+
+                    <Card id="todoCard">
+                        <Card.Content header='My ToDo List' style={{
+                            "fontFamily": "'Dancing Script', cursive",
+                            "fontSize": "xx-large"
+                        }} />
+                        <Card.Content description={
+                            <Form>
+                                <Form.Input placeholder='Login for access' disabled />
+                            </Form>
+                        } />
+                    </Card>
+                )
+
         );
     }
 }
 
-export default ToDoList;
+
+
+    export default ToDoList;

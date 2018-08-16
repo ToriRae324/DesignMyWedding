@@ -1,3 +1,7 @@
 #email, #password {
     color: white;
 }
+
+.ui.inverted.header .sub.header{
+    margin: 10px;
+}

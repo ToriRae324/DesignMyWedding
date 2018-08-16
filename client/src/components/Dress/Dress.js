@@ -54,7 +54,7 @@ class Dress extends Component {
                     </Button.Group>
                 </div>
             
-                <div className="ui three cards">
+                <div className="ui three cards stackable">
                     <Dimmer inverted className={isLoaded ? '' : 'active'}>
                         <Loader inverted>Loading Wedding Clothing</Loader>
                     </Dimmer>
