@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import "./App.css"
 import Browse from "./pages/Browse"
 import HeaderNav from './components/HeaderNav';
 import MyStuff from "./pages/MyStuff"
@@ -7,13 +8,15 @@ import ToDoList from "./components/ToDoList"
 import LoginPage from "./pages/LoginPage"
 import SignupPage from "./pages/SignupPage"
 import Auth from "./modules/Auth"
+import TeamPage from "./pages/TeamPage"
+import Footer from "./components/Footer"
+
 
 
 const App = () => (
 
 
   <Router>
-
     <div className="Container">
       <HeaderNav />
       <div className="ui grid center aligned">
@@ -36,6 +39,9 @@ const App = () => (
             <Route exact path="/signup" component={SignupPage} />
             <Route path="/browse" component={Browse} />
             <Route path="/myStuff" component={MyStuff}/>
+            <Route exact path="/teamPage" component={TeamPage}/>
+
+
 
 
 
@@ -47,15 +53,11 @@ const App = () => (
                 )
             )} /> */}
 
-            <Route path="/mystuff" component={MyStuff} />
-
-
-
 
           </Switch>
         </div>
-      </div>
-
+        </div>
+      <Footer />
     </div>
   </Router>
 );

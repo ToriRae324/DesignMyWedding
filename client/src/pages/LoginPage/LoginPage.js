@@ -35,25 +35,27 @@ class LoginPage extends React.Component {
             .then(res=> 
                 Auth.authenticateUser(res.data.token, res.data.user.id)
             )
-            .then(this.setState({loggedin:true}))
-            .catch(err=> console.log(err.response));
+            .then( res =>{
+                if (Auth.isUserAuthenticated) { this.setState({loggedin:true})
+            }}
+        )
+            .catch(err => {console.log(err.response)
+            return alert("Email or Password incorrect")})
         } else {
             alert('Please check that all the fields were filled out');
         }
-        console.log(`email: ${this.state.email}`);
-        console.log(`password: ${this.state.password}`);
+       
     }
 
     render () {
         if (this.state.loggedin){
-            return <Redirect to="/browse/venues"/>   
+            return <Redirect to="/browse"/>   
         }
       return (
         <Dimmer active page>
-            <Header as='h1'  inverted>
-            Welcome to Design My Wedding!
-            
-            <Header.Subheader>Please Log In</Header.Subheader>
+            <Header as='h1' inverted>
+                    Welcome to Design My Wedding
+                    <Header.Subheader>Log In</Header.Subheader>
           </Header>
             <div>
             <br /><br />
@@ -83,10 +85,10 @@ class LoginPage extends React.Component {
 <h3>
 Don't have an account? <Link to='/signup'>Create an Account</Link>
 </h3>
- 
-                    <h3>
-                        <Link to='/browse/venues'>Continue as Guest</Link>
-                    </h3>
+
+<h3>
+<Link to='/browse/venues'>Continue as Guest</Link>
+</h3>
             </div>
 
             </Dimmer>

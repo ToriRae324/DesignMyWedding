@@ -26,18 +26,28 @@ class SignupPage extends React.Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.email && this.state.password) {
+        if (this.state.name && this.state.email && this.state.password.length >= 8) {
             // axios ajax call here
             DB.signup({
                 email: this.state.email,
                 password: this.state.password,
                 name: this.state.name
             })
-                .then(this.setState({ signedup: true}))                
-                .catch(err => console.log(err));
-        } else {
+            .then(res => 
+                {
+                    if(res.status === 200) {
+                        this.setState({ signedup: true})
+                    } 
+                }
+            )               
+                .catch(err => {console.log("Error: "+ err)
+                return alert("That email address is already in use.")}
+            );
+        } else if (this.state.password.length < 8) {
+            alert("Password must be at least 8 characters.")
+        } else if (!this.state.name || !this.state.email || !this.state.password) {
             alert('Please check that the whole form is filed out');
-        }
+        } 
     }
 
 
@@ -48,23 +58,24 @@ class SignupPage extends React.Component {
         }
         return (
             <Dimmer active page>
-                <Header as='h1'  inverted>
-            Welcome to Design My Wedding!
-            <Header.Subheader>Please Sign Up</Header.Subheader>
+                <Header as='h1' inverted>
+                    Welcome to Design My Wedding
+                    <Header.Subheader>Sign Up</Header.Subheader>
           </Header>
                 <div>
                     <br /><br />
                     <Form>
-                        <Form.Field>
+                        <Form.Field required>
                             <label id="name">Name</label>
                             <input
                                 type="text"
                                 name="name"
                                 value={this.state.name}
                                 onChange={this.handleInputChange}
+                                
                             />
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required>
                             <label id="email">Email</label>
                             <input
                                 type="email"
@@ -73,7 +84,7 @@ class SignupPage extends React.Component {
                                 onChange={this.handleInputChange}
                             />
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required>
                             <label id="password">Password</label>
                             <input
                                 type="password"
@@ -92,6 +103,10 @@ class SignupPage extends React.Component {
                     <h3>
                         <Link to='/browse/venues'>Continue as Guest</Link>
                     </h3>
+
+                        <h3>
+<Link to='/browse/venues'>Continue as Guest</Link>
+</h3>
 
                 </div>
 

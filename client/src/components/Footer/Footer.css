@@ -1,0 +1,25 @@
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 50px;
+  width: 50px;
+  border: none;
+  }
+  
+  
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.footer {
+  margin-top: 20px; 
+  background: url(./bg.jpg) no-repeat center fixed; 
+  background-size: cover; 
+  text-align: center;
+  
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+  
