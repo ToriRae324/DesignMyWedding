@@ -19,9 +19,9 @@ class Decor extends Component {
         this.getDecor()
     }
 
-    // componentDidUpdate() {
-    //     this.getDecor()
-    // }
+    componentDidUpdate() {
+        this.getDecor()
+    }
 
 
     deleteDecor = (id) =>{
