@@ -10,6 +10,8 @@ import Auth from "./modules/Auth"
 import TeamPage from "./pages/TeamPage"
 import Footer from "./components/Footer"
 
+import Test from "./components/Test"
+
 
 const App = () => (
 
@@ -24,6 +26,7 @@ const App = () => (
           <ToDoList />
         </div>
         <div className="eleven wide column" id="content">
+        <Route exact path="/test" component={Test} />
           <Switch>
 
             <Route exact path="/" render={() => (
@@ -39,6 +42,8 @@ const App = () => (
             <Route path="/browse" component={Browse} />
             <Route path="/myStuff" component={MyStuff}/>
             <Route exact path="/teamPage" component={TeamPage}/>
+
+
 
 
 
