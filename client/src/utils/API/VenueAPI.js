@@ -16,6 +16,7 @@ venue selection possibilities
 */ 
 export default {
     getVenues: function(venue, location) {
+      console.log(location)
       return axios.get("/auth/foursquare/"+location+"/"+venue)
     // },
     // getWeddingHallVenues: function(location) {

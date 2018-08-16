@@ -1,7 +1,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 36px;
-  width: 36px;
+  height: 50px;
+  width: 50px;
   border: none;
   }
   
@@ -12,12 +12,12 @@
 }
 
 .footer {
-  margin-top: 200px; 
+  margin-top: 20px; 
   background: url(./bg.jpg) no-repeat center fixed; 
   background-size: cover; 
-  padding: 1%;
   text-align: center;
   
+  position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;

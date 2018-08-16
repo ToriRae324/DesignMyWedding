@@ -1,13 +1,3 @@
-body {
-  background-image: url("./images/MagnetStreet-LoveForever_1366x768.jpg");
-
-}
-
-@media only screen and (max-width: 600px) {
-
-  body {
-    background-image: url("./images/MagnetStreet-LoveForever_phone.jpg");
-  
-  }
-
+.ui.grid{
+  margin-bottom: 50px;
 }
