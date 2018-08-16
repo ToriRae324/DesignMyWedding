@@ -58,7 +58,7 @@ class TeamPage extends Component {
         
         <Image src='http://placekitten.com/200/300' size='small' circular  verticalAlign='middle'/>
          <p> 
-            Eric is the one who made the back end routes and linked all this shit together.
+            Eric is the one who made the back end routes and linked all this together.
           </p>
           
         </Accordion.Content>
