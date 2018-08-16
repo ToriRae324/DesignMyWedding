@@ -3,6 +3,7 @@ import "./HeaderNav.css"
 import { Menu, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import Auth from "../../modules/Auth"
+import Welcome from "../Welcome"
 
 
 
@@ -53,7 +54,10 @@ export default class HeaderNav extends Component {
               </Dropdown.Menu>
             </Dropdown>
 
+            
+
             <Menu.Menu position='right'>
+            <Welcome />
               <Menu.Item
                 name='logout'
                 active={activeItem === 'logout'}
@@ -80,6 +84,7 @@ export default class HeaderNav extends Component {
               </Dropdown>
 
               <Menu.Menu position='right'>
+               <Welcome />
                 <Link to="/login">
                   <Menu.Item
                     name='login'
