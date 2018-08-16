@@ -15,9 +15,9 @@ class ToDoList extends Component {
         this.getItems()
     }
 
-    // componentDidUpdate() {
-    //     this.getItems();
-    // }
+    componentDidUpdate() {
+        this.getItems();
+    }
 
     getItems = () => {
         DB.get()
@@ -51,12 +51,6 @@ class ToDoList extends Component {
     render() {
         return (
 
-
-            // <Card id="todoCard">
-            //     <Card.Content header='My ToDo List' style={{
-            //         "fontFamily": "'Dancing Script', cursive",
-            //         "fontSize": "xx-large"
-            //     }} />
 
             Auth.isUserAuthenticated() ? (
 
