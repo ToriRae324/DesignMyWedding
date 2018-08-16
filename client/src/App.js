@@ -7,6 +7,7 @@ import ToDoList from "./components/ToDoList"
 import LoginPage from "./pages/LoginPage"
 import SignupPage from "./pages/SignupPage"
 import Auth from "./modules/Auth"
+import Footer from "./components/Footer"
 
 
 const App = () => (
@@ -55,7 +56,7 @@ const App = () => (
           </Switch>
         </div>
       </div>
-
+      <Footer />
     </div>
   </Router>
 );
