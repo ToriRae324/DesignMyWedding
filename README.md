@@ -1,4 +1,7 @@
-# project3
+# Design My Wedding
+
+## About
+The Design My Wedding app is a great way for young millenial brides to browse for venues, decorations, and dresses. Users of our site may use all of these search abilities as a guest or if they choose to sign up and log in for increased functionality. Registered users are able to favorite their favorite venues, decorations, and dresses. An additional feature is the ability to create your own 'Todo' list where you can add, 'check-off', and delete all of the things 'Todo' before you say 'I do!'
 
 ### Website
 #### https://protected-bayou-81914.herokuapp.com/
