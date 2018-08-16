@@ -19,9 +19,9 @@ class Dress extends Component {
         this.getDresses()
     }
 
-    // componentDidUpdate() {
-    //     this.getDresses()
-    // }
+    componentDidUpdate() {
+        this.getDresses()
+    }
 
 
     deleteDress = (id) =>{
