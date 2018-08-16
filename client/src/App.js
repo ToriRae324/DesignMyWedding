@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage"
 import SignupPage from "./pages/SignupPage"
 import Auth from "./modules/Auth"
 import TeamPage from "./pages/TeamPage"
+import Footer from "./components/Footer"
 
 
 const App = () => (
@@ -57,7 +58,7 @@ const App = () => (
           </Switch>
         </div>
       </div>
-
+      <Footer />
     </div>
   </Router>
 );
