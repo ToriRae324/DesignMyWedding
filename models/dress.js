@@ -5,7 +5,7 @@ const dressSchema = new Schema({
     title: {
         type: String,
         required: true,
-        index: {unique:true}
+        index: {unique:false}
     },
     url: {
         type: String,
