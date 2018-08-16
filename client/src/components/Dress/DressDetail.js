@@ -1,11 +1,18 @@
 import React from "react";
+import Auth from "../../modules/Auth";
 
 
 const DressDetail = props => (
   <div className="ui link card" style={{"opacity": 0.85,
   "boxShadow": "5px 5px 3px darkgoldenrod"}}> 
   <div className="content">
-    <i className="right floated like icon" onClick={() => props.saveDress(props.title, props.url, props.photo, props.price, props.currency, props.shop, props.shopSite)}></i>
+
+{Auth.isUserAuthenticated() ?
+  ( 
+  <i className="right floated like icon" onClick={() => props.saveDress(props.title, props.url, props.photo, props.price, props.currency, props.shop, props.shopSite)}></i>
+ ) : ("")
+}
+   
     <div className="header"><a href={props.url}target="_blank">{props.title}</a></div>
         <a className="image" href={props.url} target="_blank">
         <img src={props.photo} alt="dress" className="image"/>
