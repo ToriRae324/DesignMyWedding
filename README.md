@@ -1,5 +1,10 @@
 # project3
 
+### Guest User
+To experience full site functionality as a registered user, you can login using our Demo Guest Account:
+* email: email@email.com
+* password: guestpassword
+
 ### Screenshots
 Login Screen:
 ![alt text][login]
