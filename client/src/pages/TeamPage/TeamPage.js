@@ -29,9 +29,9 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
         
-        <Image src='http://placekitten.com/200/200' size='small' circular verticalAlign='middle'/>
+        <Image src='../../images/blaise-hs-dt.png' size='small' circular verticalAlign='middle'/>
           <p>
-            Blaise worked his ass off to complete authentication! Go Auth!!
+            Blaise worked on User Authentication, securing our site, your password, and also working to make sure all of your personalized data remains yours!
           </p>
         </Accordion.Content>
 
