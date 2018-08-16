@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Accordion, Icon } from 'semantic-ui-react'
+import { Accordion, Icon, Image } from 'semantic-ui-react'
 
 class TeamPage extends Component {
   state = { activeIndex: 0 }
@@ -25,6 +25,8 @@ class TeamPage extends Component {
           About Blaise
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
+        
+        <Image src='http://placekitten.com/200/200' size='small' circular verticalAlign='middle'/>
           <p>
             Blaise worked his ass off to complete authentication! Go Auth!!
           </p>
@@ -35,6 +37,8 @@ class TeamPage extends Component {
           About Victoria
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
+        
+        <Image src='http://placekitten.com/300/200' size='small' circular verticalAlign='middle'/>
           <p>
             Victoria is the one who made all this shit look good.
           </p>
@@ -45,7 +49,9 @@ class TeamPage extends Component {
           About Eric
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
-          <p>
+        
+        <Image src='http://placekitten.com/200/300' size='small' circular  verticalAlign='middle'/>
+         <p> 
             Eric is the one who made the back end routes and linked all this shit together.
           </p>
           
