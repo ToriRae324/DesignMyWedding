@@ -41,7 +41,10 @@ const App = () => (
             <Route exact path="/teamPage" component={TeamPage}/>
 
 
+
+
             <Route path="/myStuff" component={MyStuff}/>
+
 
 
 

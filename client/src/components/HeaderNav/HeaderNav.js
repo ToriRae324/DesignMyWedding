@@ -59,6 +59,7 @@ export default class HeaderNav extends Component {
             <Menu.Menu position='right'>
             <Welcome />
             <Link to="/login">
+
               <Menu.Item
                 name='logout'
                 active={activeItem === 'logout'}
