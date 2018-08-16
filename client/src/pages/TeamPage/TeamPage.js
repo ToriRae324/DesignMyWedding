@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Accordion, Icon, Image } from 'semantic-ui-react'
 
+const tori = './tori.jpeg'
+
+
 class TeamPage extends Component {
   state = { activeIndex: 0 }
 
@@ -17,7 +20,7 @@ class TeamPage extends Component {
 
     return (
         <div>
-        <h1>About The Team</h1>
+        <h1 className="title">About The Team</h1>
       <Accordion styled exclusive={false} fluid>
       
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
@@ -38,9 +41,11 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
         
-        <Image src='http://placekitten.com/300/200' size='small' circular verticalAlign='middle'/>
+        <Image src={tori} size='small' circular verticalAlign='middle'/>
           <p>
-            Victoria is the one who made all this shit look good.
+            Victoria like coding, cats, reading, and making things look good. 
+            </p><p>
+            Victoria used her front-end skills to create and clean layout that was easy to navigate and pleasing to the eye. She was also in charge of gathering data for the Clothing and Extras using the Etsy API.
           </p>
         </Accordion.Content>
 
