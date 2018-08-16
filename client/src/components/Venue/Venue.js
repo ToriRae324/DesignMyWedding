@@ -44,7 +44,7 @@ class Venue extends React.Component {
 
     nearMe = (lat, long) => {
         this.setState({location: `${lat},${long}`})
-        this.getVenues("churches", this.state.location)
+        this.getVenues("churches", `${lat},${long}`)
     }
 
     saveVenue = (name, phone, address, rating, photo) => {
