@@ -15,9 +15,9 @@ class ToDoList extends Component {
         this.getItems()
     }
 
-    componentDidUpdate() {
-        this.getItems();
-    }
+    // componentDidUpdate() {
+    //     this.getItems();
+    // }
 
     getItems = () => {
         DB.get()

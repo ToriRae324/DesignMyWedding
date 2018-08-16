@@ -1965,6 +1965,12 @@ react-easy-swipe@^0.0.16:
   dependencies:
     prop-types "^15.5.8"
 
+react-geolocated@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-geolocated/-/react-geolocated-2.4.0.tgz#36287997574a12bdccc01381abfe6c4d191b0ecf"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-responsive-carousel@^3.1.41:
   version "3.1.41"
   resolved "https://registry.yarnpkg.com/react-responsive-carousel/-/react-responsive-carousel-3.1.41.tgz#b100f192ae7b147bf87eb17942ac5738cfd146fb"
