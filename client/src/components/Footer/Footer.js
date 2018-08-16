@@ -1,15 +1,15 @@
 import React from "react";
 import logo from './logo.svg';
 import "./Footer.css";
+import { Image } from 'semantic-ui-react'
+
 
 const Footer = () => (
     
     <footer className="footer text-center shadow">
-    <h3>
-        <img src={logo} className="App-logo" alt="logo" /> 
-        A React App         
-    </h3>
-    <a href="/teamPage">About Us</a>
+    <span>A React App</span>
+    <Image src={logo} className="App-logo" alt="logo" verticalAlign='middle' /> 
+             <span> <a href="/teamPage">About The Team</a></span>
     </footer>
 
 );
