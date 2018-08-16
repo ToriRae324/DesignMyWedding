@@ -17,7 +17,7 @@ module.exports = {
     create: function (req, res) {
         const userId = req.body.id;
         console.log(`userId in the decores controller ${userId}`)
-        console.log(req.body.decorData)
+        console.log(req.body.venueData)
         db.Venue
             .create(req.body.venueData)
             .then(dbModel => {

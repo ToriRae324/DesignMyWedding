@@ -12,10 +12,14 @@
 }
 
 .footer {
-  margin-top: 20px; 
+  margin-top: 200px; 
   background: url(./bg.jpg) no-repeat center fixed; 
   background-size: cover; 
   padding: 1%;
   text-align: center;
+  
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
   

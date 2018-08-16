@@ -7,6 +7,7 @@ import ToDoList from "./components/ToDoList"
 import LoginPage from "./pages/LoginPage"
 import SignupPage from "./pages/SignupPage"
 import Auth from "./modules/Auth"
+import TeamPage from "./pages/TeamPage"
 import Footer from "./components/Footer"
 
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route exact path="/signup" component={SignupPage} />
             <Route path="/browse" component={Browse} />
             <Route path="/myStuff" component={MyStuff}/>
+            <Route exact path="/teamPage" component={TeamPage}/>
 
 
 
@@ -48,7 +50,7 @@ const App = () => (
                 )
             )} /> */}
 
-            <Route path="/mystuff" component={MyStuff} />
+
 
 
 
