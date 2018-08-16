@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { Accordion, Icon, Image } from 'semantic-ui-react'
 
-const tori = './tori.jpeg';
-const blaise = "./blaise.png";
-
-
 class TeamPage extends Component {
   state = { activeIndex: 0 }
 
@@ -21,7 +17,7 @@ class TeamPage extends Component {
 
     return (
         <div>
-        <h1 className="title">About The Team</h1>
+        <h1>About The Team</h1>
       <Accordion styled exclusive={false} fluid>
       
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
@@ -30,9 +26,9 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
         
-        <Image src={blaise} size='small' circular verticalAlign='middle'/>
+        <Image src='http://placekitten.com/200/200' size='small' circular verticalAlign='middle'/>
           <p>
-            Blaise worked on User Authentication, securing our site, your password, and also working to make sure all of your personalized data remains yours!
+            Blaise worked his ass off to complete authentication! Go Auth!!
           </p>
         </Accordion.Content>
 
@@ -42,11 +38,9 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
         
-        <Image src={tori} size='small' circular verticalAlign='middle'/>
+        <Image src='http://placekitten.com/300/200' size='small' circular verticalAlign='middle'/>
           <p>
-            Victoria like coding, cats, reading, and making things look good. 
-            </p><p>
-            Victoria used her front-end skills to create and clean layout that was easy to navigate and pleasing to the eye. She was also in charge of gathering data for the Clothing and Extras using the Etsy API.
+            Victoria is the one who made all this shit look good.
           </p>
         </Accordion.Content>
 
@@ -56,9 +50,9 @@ class TeamPage extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
         
-        <Image src='http://placekitten.com/200/300' size='small' circular  verticalAlign='middle'/>
+        <Image src='Eric.jpeg' size='small' circular  verticalAlign='middle'/>
          <p> 
-            Eric is the one who made the back end routes and linked all this together.
+            Eric created and ensured that the back-end of the project worked properly. He created the controllers, routes and front end calls to the backend to provide our application the functionality that our app required. Eric used the Foursquare api to gather information on the potential wedding venues that our users may browse. Eric also implemented a geolocater to allow the user to view venues that are near them.
           </p>
           
         </Accordion.Content>
