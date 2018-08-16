@@ -11,7 +11,7 @@ class Decor extends Component {
 
     getDecor = () => {
         DB.get()
-            .then(res => this.setState({ results: res.data.decor}))
+            .then(res => this.setState({ results: res.data.decors}))
             .catch(err => console.log(err));
     }
 
