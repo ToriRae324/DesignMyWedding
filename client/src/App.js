@@ -38,20 +38,20 @@ const App = () => (
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignupPage} />
             <Route path="/browse" component={Browse} />
-            <Route path="/myStuff" component={MyStuff}/>
             <Route exact path="/teamPage" component={TeamPage}/>
 
 
+            <Route path="/myStuff" component={MyStuff}/>
 
 
 
-            {/* <Route path="/mystuff" render={() => (
+            <Route path="/mystuff" render={() => (
               Auth.isUserAuthenticated() ? (
-                <Redirect to="/mystuff/venues"/>
+                <Redirect to="/mystuff"/>
               ) : (
                   <LoginPage />
                 )
-            )} /> */}
+            )} />
 
 
           </Switch>

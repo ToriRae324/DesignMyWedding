@@ -18,7 +18,7 @@ export default class HeaderNav extends Component {
 
   logout = () => () => {
     Auth.deauthenticateUser()
-    alert("logged out")
+    alert("Logged Out")
   }
 
   
@@ -58,11 +58,13 @@ export default class HeaderNav extends Component {
 
             <Menu.Menu position='right'>
             <Welcome />
+            <Link to="/login">
               <Menu.Item
                 name='logout'
                 active={activeItem === 'logout'}
                 onClick={this.logout()}
               />
+              </Link>
             </Menu.Menu>
           </Menu>
 
