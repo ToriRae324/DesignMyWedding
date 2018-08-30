@@ -2,12 +2,17 @@
     margin-bottom: 20px; 
     background: url(./bg.jpg) no-repeat center fixed; 
     background-size: cover; 
-    height: 10%; 
     padding: 2%;
+    position: relative;
 }
 
 #title{
     margin: auto 10px;
     font-family: 'Dancing Script', cursive;
     font-size: xx-large;
+}
+
+.welcome {
+    /* position: absolute;
+    right: 0; */
 }

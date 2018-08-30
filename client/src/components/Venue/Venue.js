@@ -88,14 +88,15 @@ class Venue extends React.Component {
                                     <Button color="blue" content="Search" onClick={this.changeLocation} />
                                     <Button color="green" content="Near Me" onClick={()=>this.nearMe(`${this.props.coords.latitude}`,`${this.props.coords.longitude}`)}/>
                                 </div>
-
-                                <Button.Group id="btnGrp" attached='top'>
+                                <div>
+                                {/* <Button.Group id="btnGrp" attached='top'> */}
                                     <Button color='teal' content='Wedding Hall' onClick={(venue) => this.getVenues("wedding halls", this.state.location)} />
                                     <Button color='black' content='Parks' onClick={(venue) => this.getVenues("parks", this.state.location)} />
                                     <Button color='grey' content='Hotels' onClick={(venue) => this.getVenues("hotels", this.state.location)} />
                                     <Button color='purple' content='Country Clubs' onClick={(venue) => this.getVenues("country club", this.state.location)} />
                                     <Button color='pink' content='Churches' onClick={(venue) => this.getVenues("churches", this.state.location)} />
-                                </Button.Group>
+                                {/* </Button.Group> */}
+                                </div>
                             </div>
                             <VenueResults>
                                 <Dimmer inverted className={isLoaded ? '' : 'active'}>

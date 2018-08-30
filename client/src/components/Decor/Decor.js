@@ -52,7 +52,7 @@ class Decor extends Component {
             <div>
                 <h1 className="title">Browse Extras</h1>
                 <div>
-                    <Button.Group id = "btnGrp" attached='top'>
+                    {/* <Button.Group id = "btnGrp" attached='top'> */}
                         <Button className = "btn" color='yellow' onClick={this.getDecor("decoration")}>
                         Decor</Button>
                         <Button className = "btn" color='teal' onClick={this.getDecor("invitation")}>
@@ -65,7 +65,7 @@ class Decor extends Component {
                         Accessories
                         </Button>
 
-                    </Button.Group>
+                    {/* </Button.Group> */}
                 </div>
                 <div className="ui three cards stackable">
                     <Dimmer inverted className={isLoaded ? '' : 'active'}>
