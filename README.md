@@ -6,12 +6,12 @@ The Design My Wedding app is a great way for young millenial brides to browse fo
 For increased functionality user are about to create a free account. Registered users are able to favorite their favorite venues, decorations, and dresses. An additional feature is the ability to create your own 'Todo' list where you can add, 'check-off', and delete all of the things 'Todo' before you say 'I do!'
 
 ### Website
-#### https://protected-bayou-81914.herokuapp.com/
+#### https://shielded-woodland-99954.herokuapp.com/
 
 ### Guest User
 To experience full site functionality as a registered user, you can login using our Demo Guest Account:
-* email: email@email.com
-* password: guestpassword
+* email: demo@email.com
+* password: password
 
 
 ### Screenshots
