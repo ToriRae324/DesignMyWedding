@@ -17,13 +17,14 @@ const App = () => (
 
 
   <Router>
-    <div className="Container">
+    <div>
       <HeaderNav />
-      <div className="ui grid center aligned">
+      <div className="container ui grid center stackable aligned">
 
-        <div className="four wide column">
+        <div className="four wide column" id="todoSide">
           <ToDoList />
         </div>
+
         <div className="eleven wide column" id="content">
           <Switch>
 

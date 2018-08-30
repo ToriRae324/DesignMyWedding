@@ -33,8 +33,8 @@ export default class HeaderNav extends Component {
 
       Auth.isUserAuthenticated() ? (
 
-        <div>
-          <Menu pointing secondary id="header">
+        
+          <Menu secondary id="header">
 
             <h1 id="title"> Design My Wedding </h1>
 
@@ -56,7 +56,7 @@ export default class HeaderNav extends Component {
 
             
 
-            <Menu.Menu position='right'>
+            <div className="welcome">
             <Welcome />
             <Link to="/login">
 
@@ -66,15 +66,15 @@ export default class HeaderNav extends Component {
                 onClick={this.logout()}
               />
               </Link>
-            </Menu.Menu>
+            </div>
           </Menu>
 
-        </div>
+        
 
       ) : (
 
-          <div>
-            <Menu pointing secondary id="header">
+          
+            <Menu secondary id="header">
 
               <h1 id="title"> Design My Wedding </h1>
 
@@ -86,16 +86,19 @@ export default class HeaderNav extends Component {
                 </Dropdown.Menu>
               </Dropdown>
 
-              <Menu.Menu position='right'>
+              <div className="welcome">
                <Welcome />
                 <Link to="/login">
                   <Menu.Item
                     name='login'
                     active={activeItem === 'login'}
                   /></Link>
-              </Menu.Menu>
+                  
+              </div>
+
+              
             </Menu>
-          </div>
+          
         )
     )
   }
