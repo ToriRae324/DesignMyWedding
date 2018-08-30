@@ -14,12 +14,12 @@
 
 .todoItem {
     margin: 10px 0;
-    font-size: x-large;
+    font-size: large;
 }
 
 .ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui){
     font-family: 'Quattrocento', serif;
-    font-size: x-large;
+    font-size: large;
 }
 
 

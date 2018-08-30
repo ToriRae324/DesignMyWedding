@@ -68,7 +68,7 @@ class ToDoList extends Component {
                         </Form>
                     } />
                     <Card.Content extra>
-                        <List animated divided verticalAlign='middle'>
+                        <List divided verticalAlign='middle'>
 
                             {this.state.allItems.map(todo =>
 
